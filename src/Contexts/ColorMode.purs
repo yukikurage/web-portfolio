@@ -6,6 +6,7 @@ import Data.Maybe (Maybe(..), fromMaybe)
 import Data.Tuple.Nested (type (/\), (/\))
 import Effect (Effect)
 import Effect.Class (liftEffect)
+import Hooks.UseClass (useClass)
 import Jelly (Atom, Hook, Signal, launch_, signal, useContext)
 import Web.HTML (window)
 import Web.HTML.Window (localStorage)
@@ -85,3 +86,14 @@ getColor = case _ of
     Disabled -> case _ of
       Text -> "text-slate-300"
       Background -> "bg-slate-900 bg-opacity-80"
+
+useColor
+  :: forall r
+   . ColorScheme
+  -> ColorTarget
+  -> Hook (Record (ColorModeContext r)) Unit
+useColor scheme target = do
+  colorModeSig /\ _ <- useColorMode
+  useClass do
+    colorMode <- colorModeSig
+    pure $ getColor colorMode scheme target
