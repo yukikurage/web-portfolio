@@ -1,16 +1,15 @@
 module.exports = {
-  darkMode: 'class',
-  mode: 'jit',
-  content: [
-    './*.html',
-    './src/**/*.purs',
-  ],
+  darkMode: "class",
+  mode: "jit",
+  content: ["./*.html", "./src/**/*.purs"],
   theme: {
     extend: {
       fontFamily: {
-        Montserrat: ['Montserrat', 'sans-serif'],
-      }
+        Rubik: ["Rubik", "sans-serif"],
+        ZenKaku: ["Zen Kaku Gothic New", "sans-serif"],
+        default: ["Rubik", "Zen Kaku Gothic New", "sans-serif"],
+      },
     },
   },
   plugins: [],
-}
+};

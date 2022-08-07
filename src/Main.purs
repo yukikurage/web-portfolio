@@ -2,45 +2,49 @@ module Main where
 
 import Prelude
 
-import Components.Markdown (markdownComponent)
+import Components.Header (header)
 import Contexts (Contexts)
-import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), provideColorMode) as CM
-import Contexts.ColorMode (useColor)
-import Data.Maybe (Maybe(..))
+import Contexts.ColorMode (ColorScheme(..), ColorTarget(..)) as CM
+import Contexts.ColorMode (provideColorMode, useColor)
+import Contexts.Page (providePage, usePage)
+import Data.Pages (Page(..))
+import Data.Tuple.Nested ((/\))
 import Effect (Effect)
 import Hooks.UseClass (useClass)
-import Hooks.UseStaticFile (useStaticFile)
-import Jelly (Component, ch, chsSig, el, launchApp, text)
+import Jelly (Component, ch, chSig, el, launchApp)
+import Pages.About (aboutPageComponent)
+import Pages.NotFound (notFoundPageComponent)
+import Pages.Work (worksPageComponent)
+import Pages.Works (worksInfoPageComponent)
 
 main :: Effect Unit
 main = do
-  colorMode <- CM.provideColorMode
-  launchApp root { colorMode }
+  colorMode <- provideColorMode
+  page <- providePage
+  launchApp root { colorMode, page }
 
 root :: Component Contexts
 root = el "div" do
-  useClass $ pure "h-screen w-screen"
+  useColor CM.Primary CM.Text
+  useColor CM.Primary CM.Background
 
-  useClass $ pure "p-20"
+  useClass $ pure "font-default"
+
+  useClass $ pure "h-screen w-screen"
 
   useClass $ pure "flex flex-col items-start"
 
   useClass $ pure "gap-3"
 
-  jellyMarkdownMaybeSig <- useStaticFile $ pure "./articles/jelly.md"
+  pageSig /\ pageAtom <- usePage
 
-  ch $ el "div" do
-    useColor CM.Highlight CM.Text
-    useColor CM.Highlight CM.Background
+  ch $ header
 
-    useClass $ pure "font-Montserrat text-5xl"
+  chSig do
+    page <- pageSig
 
-    useClass $ pure "py-4 px-6"
-
-    ch $ text $ pure "Hello, Jelly & tailwind!"
-
-  chsSig do
-    jellyMarkdownMaybe <- jellyMarkdownMaybeSig
-    pure case jellyMarkdownMaybe of
-      Just jellyMarkdown -> [ markdownComponent $ pure $ jellyMarkdown ]
-      Nothing -> []
+    pure $ case page of
+      PageAbout -> aboutPageComponent
+      PageWorks -> worksPageComponent
+      PageWorksInfo workId -> worksInfoPageComponent $ pure workId
+      PageNotFound path -> notFoundPageComponent $ pure path

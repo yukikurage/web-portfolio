@@ -4,21 +4,30 @@
 
 .markdown h1 {
   @apply text-4xl;
-  @apply font-Montserrat;
+  @apply font-bold;
+  @apply py-3;
 }
 
 .markdown h2 {
   @apply text-3xl;
+  @apply font-medium;
+  @apply py-2;
 }
 
 .markdown h3 {
   @apply text-2xl;
+  @apply font-medium;
+  @apply py-1;
 }
 
 .markdown h4 {
   @apply text-xl;
+  @apply font-normal;
+  @apply py-1;
 }
 
 .markdown h5 {
   @apply text-lg;
+  @apply font-normal;
+  @apply py-1;
 }
