@@ -12,33 +12,33 @@
   @apply text-2xl;
   @apply font-medium;
   @apply my-4;
-  @apply ml-1;
+  @apply ml-3;
 }
 
 .markdown h3 {
   @apply text-xl;
   @apply font-medium;
   @apply my-3;
-  @apply ml-2;
+  @apply ml-5;
 }
 
 .markdown h4 {
   @apply text-xl;
   @apply font-normal;
   @apply my-2;
-  @apply ml-3;
+  @apply ml-6;
 }
 
 .markdown h5 {
   @apply text-lg;
   @apply font-normal;
   @apply my-2;
-  @apply ml-4;
+  @apply ml-7;
 }
 
 .markdown p {
   @apply my-1;
-  @apply ml-5;
+  @apply ml-8;
 }
 
 .markdown pre {
@@ -47,7 +47,7 @@
   @apply py-3;
   @apply px-5;
   @apply rounded;
-  @apply ml-6;
+  @apply ml-9;
   @apply my-3;
 }
 .markdown code {
