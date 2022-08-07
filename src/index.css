@@ -24,14 +24,14 @@
 
 .markdown h4 {
   @apply text-xl;
-  @apply font-normal;
+  @apply font-medium;
   @apply my-2;
   @apply ml-6;
 }
 
 .markdown h5 {
   @apply text-lg;
-  @apply font-normal;
+  @apply font-medium;
   @apply my-2;
   @apply ml-7;
 }
