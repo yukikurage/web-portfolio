@@ -120,14 +120,14 @@ getColor = case _ of
       Background -> "bg-stone-900 bg-opacity-80"
   Hacker -> case _ of
     Primary -> case _ of
-      Text -> "text-neutral-100"
+      Text -> "text-white"
       Background -> "bg-black"
     Highlight -> case _ of
       Text -> "text-green-500"
       Background -> "bg-green-500"
     Reverse -> case _ of
       Text -> "text-black"
-      Background -> "bg-neutral-200"
+      Background -> "bg-white"
     Disabled -> case _ of
       Text -> "text-neutral-300"
       Background -> "bg-black bg-opacity-80"
