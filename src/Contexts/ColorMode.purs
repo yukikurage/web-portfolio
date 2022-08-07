@@ -68,7 +68,7 @@ getColor :: ColorMode -> ColorScheme -> ColorTarget -> String
 getColor = case _ of
   Light -> case _ of
     Primary -> case _ of
-      Text -> "text-neutral-900"
+      Text -> "text-neutral-800"
       Background -> "bg-white"
     Highlight -> case _ of
       Text -> "text-rose-600"
@@ -82,19 +82,19 @@ getColor = case _ of
   Dark -> case _ of
     Primary -> case _ of
       Text -> "text-white"
-      Background -> "bg-slate-900"
+      Background -> "bg-zinc-900"
     Highlight -> case _ of
-      Text -> "text-fuchsia-500"
-      Background -> "bg-fuchsia-500"
+      Text -> "text-amber-500"
+      Background -> "bg-amber-500"
     Reverse -> case _ of
-      Text -> "text-slate-900"
+      Text -> "text-zinc-900"
       Background -> "bg-white"
     Disabled -> case _ of
-      Text -> "text-slate-300"
-      Background -> "bg-slate-900 bg-opacity-80"
+      Text -> "text-zinc-300"
+      Background -> "bg-zinc-900 bg-opacity-80"
   Summer -> case _ of
     Primary -> case _ of
-      Text -> "text-slate-800"
+      Text -> "text-slate-700"
       Background -> "bg-white"
     Highlight -> case _ of
       Text -> "text-sky-600"
@@ -107,7 +107,7 @@ getColor = case _ of
       Background -> "bg-white bg-opacity-80"
   Winter -> case _ of
     Primary -> case _ of
-      Text -> "text-white"
+      Text -> "text-stone-100"
       Background -> "bg-stone-900"
     Highlight -> case _ of
       Text -> "text-stone-400"
