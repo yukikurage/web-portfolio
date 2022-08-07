@@ -1,3 +1,3 @@
-# Jelly Examples
+# Web Portfolio
 
-This repository is an example usage of the [Jelly](https://github.com/yukikurage/purescript-jelly)
+Web 系創作物の Portfolio

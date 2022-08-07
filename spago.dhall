@@ -12,14 +12,18 @@ to generate this file without the comments in this block.
 -}
 { name = "my-project"
 , dependencies =
-  [ "arrays"
+  [ "aff"
+  , "affjax"
+  , "affjax-web"
   , "console"
   , "effect"
+  , "either"
   , "jelly"
   , "maybe"
   , "prelude"
   , "strings"
   , "tuples"
+  , "web-dom"
   , "web-html"
   , "web-storage"
   ]
