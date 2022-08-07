@@ -23,7 +23,7 @@ headerComponent = el "div" do
 
     useLink $ pure PageAbout
 
-    useClass $ pure "text-4xl font-black"
+    useClass $ pure "text-3xl font-black"
 
     useClass $ pure "w-min py-2 px-4"
 
