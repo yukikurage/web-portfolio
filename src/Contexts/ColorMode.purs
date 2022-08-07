@@ -65,8 +65,8 @@ getColor = case _ of
       Text -> "text-slate-900"
       Background -> "bg-white"
     Highlight -> case _ of
-      Text -> "text-rose-600"
-      Background -> "bg-rose-600"
+      Text -> "text-teal-600"
+      Background -> "bg-teal-600"
     Reverse -> case _ of
       Text -> "text-white"
       Background -> "bg-slate-900"
@@ -78,8 +78,8 @@ getColor = case _ of
       Text -> "text-white"
       Background -> "bg-slate-900"
     Highlight -> case _ of
-      Text -> "text-rose-600"
-      Background -> "bg-rose-600"
+      Text -> "text-teal-600"
+      Background -> "bg-teal-600"
     Reverse -> case _ of
       Text -> "text-slate-900"
       Background -> "bg-white"

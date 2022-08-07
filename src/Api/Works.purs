@@ -7,7 +7,7 @@ import Affjax.Web (get)
 import Data.Array (find)
 import Data.Either (Either(..))
 import Data.Maybe (Maybe(..))
-import Data.Work (Work, WorkId)
+import Data.Work (WorkId, WorkInfo, WorkItem)
 import Effect.Aff (Aff)
 
 type WorkInternal =
@@ -26,10 +26,12 @@ workInternals =
     }
   ]
 
-getWorkIds :: Aff (Array WorkId)
-getWorkIds = pure $ map _.id workInternals
+getWorks :: Aff (Array WorkItem)
+getWorks = pure $ map
+  (\{ id, title, thumbnailURL } -> { id, title, thumbnailURL })
+  workInternals
 
-getWorksInfo :: WorkId -> Aff (Maybe Work)
+getWorksInfo :: WorkId -> Aff (Maybe WorkInfo)
 getWorksInfo workId = do
   let
     workMaybe = find (\w -> w.id == workId) workInternals

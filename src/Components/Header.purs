@@ -13,7 +13,7 @@ import Jelly (Component, Signal, ch, el, text)
 
 headerComponent :: Component Contexts
 headerComponent = el "div" do
-  useClass $ pure "w-full p-7"
+  useClass $ pure "w-full p-6"
 
   useClass $ pure "flex justify-start items-end gap-4"
 
@@ -23,7 +23,7 @@ headerComponent = el "div" do
 
     useLink $ pure PageAbout
 
-    useClass $ pure "text-3xl font-black"
+    useClass $ pure "text-3xl font-black font-Bungee"
 
     useClass $ pure "w-min py-2 px-4"
 
@@ -40,9 +40,9 @@ navTab
   :: { titleSig :: Signal String, refPageSig :: Signal Page }
   -> Component Contexts
 navTab { titleSig, refPageSig } = el "a" do
-  useClass $ pure "relative group py-1 px-3"
+  useClass $ pure "relative group py-1 w-28"
+  useClass $ pure "flex justify-center"
   useClass $ pure "text-2xl font-bold"
-
   useClass $ pure "transition-all"
 
   pageSig /\ _ <- usePage

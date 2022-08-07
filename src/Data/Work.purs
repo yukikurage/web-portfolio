@@ -2,7 +2,13 @@ module Data.Work where
 
 type WorkId = Int
 
-type Work =
+type WorkItem =
+  { id :: WorkId
+  , title :: String
+  , thumbnailURL :: String
+  }
+
+type WorkInfo =
   { id :: WorkId
   , title :: String
   , thumbnailURL :: String
