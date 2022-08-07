@@ -10,6 +10,7 @@ import Contexts.Page (providePage, usePage)
 import Data.Page (Page(..))
 import Data.Tuple.Nested ((/\))
 import Effect (Effect)
+import Hooks.UseAdjustWindowHeight (useAdjustWindowHeight)
 import Hooks.UseClass (useClass)
 import Jelly (Component, ch, chSig, el, launchApp)
 import Pages.About (aboutPageComponent)
@@ -27,26 +28,28 @@ main = do
 
 root :: Component Contexts
 root = el "div" do
+  useAdjustWindowHeight
+
   useColor CM.Primary CM.Text
   useColor CM.Primary CM.Background
 
   useClass $ pure "font-default"
-
-  useClass $ pure "h-screen w-screen"
-
+  useClass $ pure "w-screen"
   useClass $ pure "flex flex-col items-start"
 
   pageSig /\ _ <- usePage
 
   ch $ headerComponent
 
-  chSig do
-    page <- pageSig
+  ch $ el "div" do
+    useClass $ pure "overflow-y-auto w-full"
+    chSig do
+      page <- pageSig
 
-    pure $ case page of
-      PageAbout -> aboutPageComponent
-      PageWorks -> worksPageComponent
-      PageWorkInfo workId -> workInfoPageComponent $ pure workId
-      PagePosts -> postsPageComponent
-      PagePostInfo postId -> postInfoPageComponent $ pure postId
-      PageNotFound path -> notFoundPageComponent $ pure path
+      pure $ case page of
+        PageAbout -> aboutPageComponent
+        PageWorks -> worksPageComponent
+        PageWorkInfo workId -> workInfoPageComponent $ pure workId
+        PagePosts -> postsPageComponent
+        PagePostInfo postId -> postInfoPageComponent $ pure postId
+        PageNotFound path -> notFoundPageComponent $ pure path

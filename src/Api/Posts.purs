@@ -18,9 +18,9 @@ type PostInternal =
 
 workInternals :: Array PostInternal
 workInternals =
-  [ { contentURL: "posts/jelly.md"
+  [ { contentURL: "posts/test.md"
     , id: 1
-    , title: "Jelly"
+    , title: "Test"
     }
   ]
 
