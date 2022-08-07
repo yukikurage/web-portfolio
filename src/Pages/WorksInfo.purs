@@ -12,11 +12,15 @@ import Data.Work (WorkId)
 import Effect.Aff (launchAff_)
 import Effect.Class (liftEffect)
 import Hooks.UseApi (FetchStatus(..), useApi)
-import Jelly (Component, Signal, chsSig, el, useSignal, writeAtom)
+import Hooks.UseClass (useClass)
+import Jelly (Component, Signal, ch, chsSig, el, useSignal, writeAtom)
 import Routing.Hash (getHash)
 
 workInfoPageComponent :: Signal WorkId -> Component Contexts
 workInfoPageComponent workIdSig = el "div" do
+  useClass $ pure "w-full"
+  useClass $ pure "flex flex-col items-center justify-start"
+
   workMaybeSig /\ fetch <- useApi $ getWorksInfo
 
   useSignal do
@@ -25,12 +29,14 @@ workInfoPageComponent workIdSig = el "div" do
 
   _ /\ pageAtom <- usePage
 
-  chsSig do
-    workMaybe <- workMaybeSig
-    case workMaybe of
-      Fetched work -> pure [ markdownComponent $ pure $ work.content ]
-      NotFetched -> pure []
-      Failed -> do
-        hash <- liftEffect $ getHash
-        liftEffect $ writeAtom pageAtom $ PageNotFound hash
-        pure []
+  ch $ el "div" do
+    useClass $ pure "w-2/3"
+    chsSig do
+      workMaybe <- workMaybeSig
+      case workMaybe of
+        Fetched work -> pure [ markdownComponent $ pure $ work.content ]
+        NotFetched -> pure []
+        Failed -> do
+          hash <- liftEffect $ getHash
+          liftEffect $ writeAtom pageAtom $ PageNotFound hash
+          pure []

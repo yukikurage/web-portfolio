@@ -20,7 +20,7 @@ pageTitleComponent titleSig = el "div" do
     useClass $ pure
       "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-16 transition-all"
 
-    useDelayClass 20 (pure "w-0") $ pure " w-96 rotate-3"
+    useDelayClass 20 (pure "w-0") $ pure " w-80 rotate-3"
 
     useColor Highlight Background
 

@@ -76,7 +76,7 @@ colorThemeToggleButton colorModeSig =
     useClass $ pure "hover:opacity-100 transition-opacity font-bold"
     useClass $ do
       isCurrentColorTheme <- isCurrentColorThemeSig
-      pure $ if isCurrentColorTheme then "opacity-100" else "opacity-70"
+      pure $ if isCurrentColorTheme then "opacity-100" else "opacity-80"
 
     on "click" \_ -> do
       colorMode <- readSignal colorModeSig

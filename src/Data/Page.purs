@@ -15,6 +15,7 @@ data Page
   | PageWorkInfo WorkId
   | PagePosts
   | PagePostInfo PostId
+  | PageLinks
   | PageNotFound String
 
 derive instance Eq Page
@@ -27,6 +28,7 @@ pageToHash = case _ of
   PageWorkInfo workId -> "works/" <> show workId
   PagePosts -> "posts"
   PagePostInfo postId -> "posts/" <> show postId
+  PageLinks -> "links"
   PageNotFound path -> path
 
 route :: Match Page
@@ -37,9 +39,19 @@ route =
     , PageWorks <$ lit "works"
     , PagePostInfo <$> (lit "posts" *> int)
     , PagePosts <$ lit "posts"
+    , PageLinks <$ lit "links"
     , pure $ PageAbout
     ]
     <* end
 
 hashToPage :: String -> Page
 hashToPage hash = either (const $ PageNotFound hash) identity $ match route hash
+
+isParent :: Page -> Page -> Boolean
+isParent PageWorks PageWorks = true
+isParent PageWorks (PageWorkInfo _) = true
+isParent PagePosts PagePosts = true
+isParent PagePosts (PagePostInfo _) = true
+isParent PageAbout PageAbout = true
+isParent PageLinks PageLinks = true
+isParent _ _ = false

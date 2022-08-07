@@ -58,5 +58,6 @@ root = el "div" do
           PagePosts -> postsPageComponent
           PagePostInfo postId -> postInfoPageComponent $ pure postId
           PageNotFound path -> notFoundPageComponent $ pure path
+          PageLinks -> notFoundPageComponent $ pure "links"
 
     ch footerComponent

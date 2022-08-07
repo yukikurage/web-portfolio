@@ -12,11 +12,15 @@ import Data.Tuple.Nested ((/\))
 import Effect.Aff (launchAff_)
 import Effect.Class (liftEffect)
 import Hooks.UseApi (FetchStatus(..), useApi)
-import Jelly (Component, Signal, chsSig, el, useSignal, writeAtom)
+import Hooks.UseClass (useClass)
+import Jelly (Component, Signal, ch, chsSig, el, useSignal, writeAtom)
 import Routing.Hash (getHash)
 
 postInfoPageComponent :: Signal PostId -> Component Contexts
 postInfoPageComponent postIdSig = el "div" do
+  useClass $ pure "w-full"
+  useClass $ pure "flex flex-col items-center justify-start"
+
   postMaybeSig /\ fetch <- useApi $ getPostsInfo
 
   useSignal do
@@ -25,12 +29,14 @@ postInfoPageComponent postIdSig = el "div" do
 
   _ /\ pageAtom <- usePage
 
-  chsSig do
-    postMaybe <- postMaybeSig
-    case postMaybe of
-      Fetched post -> pure [ markdownComponent $ pure $ post.content ]
-      NotFetched -> pure []
-      Failed -> do
-        hash <- liftEffect $ getHash
-        liftEffect $ writeAtom pageAtom $ PageNotFound hash
-        pure []
+  ch $ el "div" do
+    useClass $ pure "w-2/3"
+    chsSig do
+      postMaybe <- postMaybeSig
+      case postMaybe of
+        Fetched post -> pure [ markdownComponent $ pure $ post.content ]
+        NotFetched -> pure []
+        Failed -> do
+          hash <- liftEffect $ getHash
+          liftEffect $ writeAtom pageAtom $ PageNotFound hash
+          pure []

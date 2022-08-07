@@ -3,33 +3,55 @@
 @tailwind utilities;
 
 .markdown h1 {
-  @apply text-4xl;
+  @apply text-3xl;
   @apply font-bold;
-  @apply py-3;
+  @apply my-6;
 }
 
 .markdown h2 {
-  @apply text-3xl;
+  @apply text-2xl;
   @apply font-medium;
-  @apply py-2;
+  @apply my-4;
+  @apply ml-1;
 }
 
 .markdown h3 {
-  @apply text-2xl;
+  @apply text-xl;
   @apply font-medium;
-  @apply py-1;
+  @apply my-3;
+  @apply ml-2;
 }
 
 .markdown h4 {
   @apply text-xl;
   @apply font-normal;
-  @apply py-1;
+  @apply my-2;
+  @apply ml-3;
 }
 
 .markdown h5 {
   @apply text-lg;
   @apply font-normal;
-  @apply py-1;
+  @apply my-2;
+  @apply ml-4;
+}
+
+.markdown p {
+  @apply my-1;
+  @apply ml-5;
+}
+
+.markdown pre {
+  @apply bg-gray-500;
+  @apply bg-opacity-20;
+  @apply py-3;
+  @apply px-5;
+  @apply rounded;
+  @apply ml-6;
+  @apply my-3;
+}
+.markdown code {
+  @apply font-SourceCodePro !important;
 }
 
 * {

@@ -5,7 +5,7 @@ import Prelude
 import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor, useColorSig)
 import Contexts.Page (usePage)
-import Data.Page (Page(..))
+import Data.Page (Page(..), isParent)
 import Data.Tuple.Nested ((/\))
 import Hooks.UseClass (useClass)
 import Hooks.UseLink (useLink)
@@ -27,7 +27,7 @@ headerComponent = el "div" do
 
     useClass $ pure "w-min py-2 px-4"
 
-    ch $ text $ pure "YukiNet"
+    ch $ text $ pure "YUKINET"
 
   ch $ el "div" do
     useClass $ pure "flex-grow"
@@ -41,7 +41,7 @@ navTab
   :: { titleSig :: Signal String, refPageSig :: Signal Page }
   -> Component Contexts
 navTab { titleSig, refPageSig } = el "a" do
-  useClass $ pure "relative group py-1 px-5"
+  useClass $ pure "relative group py-2 px-5"
   useClass $ pure "flex justify-center"
   useClass $ pure "text-2xl font-bold"
   useClass $ pure "transition-all"
@@ -51,7 +51,7 @@ navTab { titleSig, refPageSig } = el "a" do
   useLink refPageSig
 
   let
-    isActiveSig = eq <$> pageSig <*> refPageSig
+    isActiveSig = isParent <$> refPageSig <*> pageSig
 
   useColorSig
     do
