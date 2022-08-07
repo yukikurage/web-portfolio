@@ -31,7 +31,3 @@
   @apply font-normal;
   @apply py-1;
 }
-
-body * {
-  @apply text-inherit
-}

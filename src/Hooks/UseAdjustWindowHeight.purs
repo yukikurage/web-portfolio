@@ -24,4 +24,4 @@ useAdjustWindowHeight = do
   useEventListener "resize" listener $
     Window.toEventTarget w
 
-  "style" :+ ("height:" <> _) <<< show <$> windowHeightSig
+  "style" :+ (\height -> "height:" <> show height <> "px") <$> windowHeightSig

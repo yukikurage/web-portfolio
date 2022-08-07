@@ -2,6 +2,7 @@ module Main where
 
 import Prelude
 
+import Components.Footer (footerComponent)
 import Components.Header (headerComponent)
 import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..)) as CM
@@ -42,14 +43,20 @@ root = el "div" do
   ch $ headerComponent
 
   ch $ el "div" do
-    useClass $ pure "overflow-y-auto w-full"
-    chSig do
-      page <- pageSig
+    useClass $ pure "overflow-y-auto w-full flex-1"
 
-      pure $ case page of
-        PageAbout -> aboutPageComponent
-        PageWorks -> worksPageComponent
-        PageWorkInfo workId -> workInfoPageComponent $ pure workId
-        PagePosts -> postsPageComponent
-        PagePostInfo postId -> postInfoPageComponent $ pure postId
-        PageNotFound path -> notFoundPageComponent $ pure path
+    ch $ el "div" do
+      useClass $ pure "min-h-[calc(100%-8rem)]"
+
+      chSig do
+        page <- pageSig
+
+        pure $ case page of
+          PageAbout -> aboutPageComponent
+          PageWorks -> worksPageComponent
+          PageWorkInfo workId -> workInfoPageComponent $ pure workId
+          PagePosts -> postsPageComponent
+          PagePostInfo postId -> postInfoPageComponent $ pure postId
+          PageNotFound path -> notFoundPageComponent $ pure path
+
+    ch footerComponent
