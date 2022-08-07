@@ -28,7 +28,7 @@ topPageComponent = el "div" do
       "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-24 z-10"
     useClass $ pure "flex flex-row"
 
-    chs $ replicate 10 $ el "div" do
+    chs $ replicate 7 $ el "div" do
       useClass $ pure "flex-1 overflow-hidden"
 
       ch $ el "div" do
