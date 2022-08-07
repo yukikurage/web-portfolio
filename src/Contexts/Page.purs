@@ -2,11 +2,10 @@ module Contexts.Page where
 
 import Prelude
 
-import Data.Pages (Page(..), hashToPage, pageToHash)
+import Data.Pages (Page, hashToPage, pageToHash)
 import Data.Tuple.Nested (type (/\), (/\))
 import Effect (Effect)
 import Effect.Class (liftEffect)
-import Effect.Console (log)
 import Jelly (Atom, Hook, Signal, launch_, signal, useContext, writeAtom)
 import Routing.Hash (getHash, setHash)
 import Web.Event.EventTarget (addEventListener, eventListener)
@@ -34,7 +33,7 @@ providePage = do
 
   pageSig /\ pageAtom <- signal $ hashToPage initialHash
 
-  -- Page が変わったときに Hash を書き換える (PageNotFound は例外)
+  -- Page が変わったときに Hash を書き換える
   launch_ do
     page <- pageSig
     liftEffect $ setHash $ pageToHash page

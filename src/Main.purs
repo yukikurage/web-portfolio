@@ -2,7 +2,7 @@ module Main where
 
 import Prelude
 
-import Components.Header (header)
+import Components.Header (headerComponent)
 import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..)) as CM
 import Contexts.ColorMode (provideColorMode, useColor)
@@ -34,11 +34,9 @@ root = el "div" do
 
   useClass $ pure "flex flex-col items-start"
 
-  useClass $ pure "gap-3"
+  pageSig /\ _ <- usePage
 
-  pageSig /\ pageAtom <- usePage
-
-  ch $ header
+  ch $ headerComponent
 
   chSig do
     page <- pageSig

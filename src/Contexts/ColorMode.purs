@@ -65,8 +65,8 @@ getColor = case _ of
       Text -> "text-slate-900"
       Background -> "bg-white"
     Highlight -> case _ of
-      Text -> "text-slate-900"
-      Background -> "bg-pink-500"
+      Text -> "text-pink-600"
+      Background -> "bg-pink-600"
     Reverse -> case _ of
       Text -> "text-white"
       Background -> "bg-slate-900"
@@ -78,7 +78,7 @@ getColor = case _ of
       Text -> "text-white"
       Background -> "bg-slate-900"
     Highlight -> case _ of
-      Text -> "text-white"
+      Text -> "text-pink-600"
       Background -> "bg-pink-600"
     Reverse -> case _ of
       Text -> "text-slate-900"
@@ -86,6 +86,19 @@ getColor = case _ of
     Disabled -> case _ of
       Text -> "text-slate-300"
       Background -> "bg-slate-900 bg-opacity-80"
+
+useColorSig
+  :: forall r
+   . Signal ColorScheme
+  -> Signal ColorTarget
+  -> Hook (Record (ColorModeContext r)) Unit
+useColorSig schemeSig targetSig = do
+  colorModeSig /\ _ <- useColorMode
+  useClass do
+    colorMode <- colorModeSig
+    scheme <- schemeSig
+    target <- targetSig
+    pure $ getColor colorMode scheme target
 
 useColor
   :: forall r
