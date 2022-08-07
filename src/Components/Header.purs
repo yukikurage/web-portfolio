@@ -18,14 +18,19 @@ headerComponent = el "div" do
   useClass $ pure "flex justify-start items-end gap-4"
 
   ch $ el "a" do
+    pageSig /\ _ <- usePage
+
     useColor Reverse Text
     useColor Highlight Background
 
-    useLink $ pure PageAbout
+    useLink $ pure PageTop
 
     useClass $ pure "text-3xl font-black font-Bungee"
-
-    useClass $ pure "w-min py-2 px-4"
+    useClass $ pure "py-2 overflow-hidden transition-all"
+    useClass $ pure "flex justify-center items-center"
+    useClass do
+      page <- pageSig
+      pure if page == PageTop then "w-0" else "px-4 w-48"
 
     ch $ text $ pure "YUKINET"
 

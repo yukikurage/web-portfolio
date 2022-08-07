@@ -3,27 +3,45 @@ module Components.Footer where
 import Prelude
 
 import Contexts (Contexts)
-import Contexts.ColorMode (ColorMode(..), ColorScheme(..), ColorTarget(..), getColor, useColor, useColorMode)
+import Contexts.ColorMode (ColorMode(..), ColorScheme(..), ColorTarget(..), getColor, useColorMode, useColorSig)
+import Contexts.Page (usePage)
+import Data.Page (Page(..))
 import Data.Tuple.Nested ((/\))
 import Hooks.UseClass (useClass)
-import Jelly (Component, Signal, ch, chSig, el, on, readSignal, text, writeAtom, (:=))
+import Jelly (Component, Hook, Signal, ch, chSig, el, on, readSignal, text, writeAtom, (:=))
+
+useFooterColor :: Hook Contexts Unit
+useFooterColor = do
+  pageSig /\ _ <- usePage
+
+  useColorSig
+    do
+      ifM (eq PageTop <$> pageSig)
+        do pure Primary
+        do pure Reverse
+    do pure Text
+  useColorSig
+    do
+      ifM (eq PageTop <$> pageSig)
+        do pure Primary
+        do pure Reverse
+    do pure Background
 
 footerComponent :: Component Contexts
 footerComponent = el "div" do
-  useClass $ pure "w-full h-32 py-6 px-12"
+  useClass $ pure "w-full h-32 py-8 px-12"
 
-  useColor Reverse Text
-  useColor Reverse Background
+  useFooterColor
 
   useClass $ pure "text-opacity-80"
-  useClass $ pure "flex flex-row justify-between"
+  useClass $ pure "flex flex-row justify-between items-end"
 
   ch copyRight
   ch colorThemes
 
 copyRight :: Component Contexts
 copyRight = el "div" do
-  useClass $ pure "text-opacity-80"
+  useClass $ pure "text-opacity-70"
   useClass $ pure "flex flex-col gap-3"
 
   ch $ el "p" do
@@ -44,9 +62,9 @@ copyRight = el "div" do
 
 linkText :: Signal String -> Signal (Component Contexts) -> Component Contexts
 linkText linkSig componentSig = el "a" do
+  useFooterColor
   useClass $ pure
     "text-opacity-70 hover:text-opacity-100 transition-colors font-bold"
-  useColor Reverse Text
 
   "href" := linkSig
   "target" := pure "_blank"

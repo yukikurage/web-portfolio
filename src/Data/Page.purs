@@ -10,7 +10,8 @@ import Routing (match)
 import Routing.Match (Match, end, int, lit)
 
 data Page
-  = PageAbout
+  = PageTop
+  | PageAbout
   | PageWorks
   | PageWorkInfo WorkId
   | PagePosts
@@ -23,6 +24,7 @@ derive instance Ord Page
 
 pageToHash :: Page -> String
 pageToHash = case _ of
+  PageTop -> ""
   PageAbout -> "about"
   PageWorks -> "works"
   PageWorkInfo workId -> "works/" <> show workId
@@ -40,13 +42,14 @@ route =
     , PagePostInfo <$> (lit "posts" *> int)
     , PagePosts <$ lit "posts"
     , PageLinks <$ lit "links"
-    , pure $ PageAbout
+    , pure $ PageTop
     ]
     <* end
 
 hashToPage :: String -> Page
 hashToPage hash = either (const $ PageNotFound hash) identity $ match route hash
 
+-- | navigation のところで使う
 isParent :: Page -> Page -> Boolean
 isParent PageWorks PageWorks = true
 isParent PageWorks (PageWorkInfo _) = true
@@ -54,4 +57,5 @@ isParent PagePosts PagePosts = true
 isParent PagePosts (PagePostInfo _) = true
 isParent PageAbout PageAbout = true
 isParent PageLinks PageLinks = true
+isParent PageTop PageTop = true
 isParent _ _ = false

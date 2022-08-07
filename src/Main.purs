@@ -18,6 +18,7 @@ import Pages.About (aboutPageComponent)
 import Pages.NotFound (notFoundPageComponent)
 import Pages.PostInfo (postInfoPageComponent)
 import Pages.Posts (postsPageComponent)
+import Pages.Top (topPageComponent)
 import Pages.Works (worksPageComponent)
 import Pages.WorksInfo (workInfoPageComponent)
 
@@ -46,7 +47,7 @@ root = el "div" do
     useClass $ pure "overflow-y-auto w-full flex-1"
 
     ch $ el "div" do
-      useClass $ pure "min-h-[calc(100%-8rem)]"
+      useClass $ pure "min-h-[calc(100%-8rem)] h-0"
 
       chSig do
         page <- pageSig
@@ -59,5 +60,6 @@ root = el "div" do
           PagePostInfo postId -> postInfoPageComponent $ pure postId
           PageNotFound path -> notFoundPageComponent $ pure path
           PageLinks -> notFoundPageComponent $ pure "links"
+          PageTop -> topPageComponent
 
     ch footerComponent
