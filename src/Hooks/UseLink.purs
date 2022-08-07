@@ -2,7 +2,7 @@ module Hooks.UseLink where
 
 import Prelude
 
-import Data.Pages (Page, pageToHash)
+import Data.Page (Page, pageToHash)
 import Jelly (Hook, Signal, (:=))
 
 useLink :: forall r. Signal Page -> Hook r Unit

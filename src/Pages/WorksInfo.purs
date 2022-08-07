@@ -2,11 +2,11 @@ module Pages.Works where
 
 import Prelude
 
+import Api.Works (getWorksInfo)
 import Components.Markdown (markdownComponent)
-import Contents.Works (getWorksInfo)
 import Contexts (Contexts)
 import Contexts.Page (usePage)
-import Data.Pages (Page(..))
+import Data.Page (Page(..))
 import Data.Tuple.Nested ((/\))
 import Data.Work (WorkId)
 import Effect.Aff (launchAff_)

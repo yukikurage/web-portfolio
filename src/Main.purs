@@ -7,7 +7,7 @@ import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..)) as CM
 import Contexts.ColorMode (provideColorMode, useColor)
 import Contexts.Page (providePage, usePage)
-import Data.Pages (Page(..))
+import Data.Page (Page(..))
 import Data.Tuple.Nested ((/\))
 import Effect (Effect)
 import Hooks.UseClass (useClass)

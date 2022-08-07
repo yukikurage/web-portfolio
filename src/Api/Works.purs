@@ -1,4 +1,4 @@
-module Contents.Works where
+module Api.Works where
 
 import Prelude
 
@@ -19,7 +19,7 @@ type WorkInternal =
 
 workInternals :: Array WorkInternal
 workInternals =
-  [ { contentURL: "articles/jelly.md"
+  [ { contentURL: "works/jelly.md"
     , id: 1
     , title: "Jelly"
     , thumbnailURL: "null"

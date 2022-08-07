@@ -5,7 +5,7 @@ import Prelude
 import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor, useColorSig)
 import Contexts.Page (usePage)
-import Data.Pages (Page(..))
+import Data.Page (Page(..))
 import Data.Tuple.Nested ((/\))
 import Hooks.UseClass (useClass)
 import Hooks.UseLink (useLink)

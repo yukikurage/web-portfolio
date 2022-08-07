@@ -2,7 +2,7 @@ module Contexts.Page where
 
 import Prelude
 
-import Data.Pages (Page, hashToPage, pageToHash)
+import Data.Page (Page, hashToPage, pageToHash)
 import Data.Tuple.Nested (type (/\), (/\))
 import Effect (Effect)
 import Effect.Class (liftEffect)
