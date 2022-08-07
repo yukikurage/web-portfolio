@@ -35,12 +35,13 @@ headerComponent = el "div" do
 
     ch $ navTab { titleSig: pure "About", refPageSig: pure PageAbout }
     ch $ navTab { titleSig: pure "Works", refPageSig: pure PageWorks }
+    ch $ navTab { titleSig: pure "Blog", refPageSig: pure PagePosts }
 
 navTab
   :: { titleSig :: Signal String, refPageSig :: Signal Page }
   -> Component Contexts
 navTab { titleSig, refPageSig } = el "a" do
-  useClass $ pure "relative group py-1 w-28"
+  useClass $ pure "relative group py-1 px-5"
   useClass $ pure "flex justify-center"
   useClass $ pure "text-2xl font-bold"
   useClass $ pure "transition-all"

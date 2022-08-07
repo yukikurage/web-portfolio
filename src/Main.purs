@@ -14,8 +14,10 @@ import Hooks.UseClass (useClass)
 import Jelly (Component, ch, chSig, el, launchApp)
 import Pages.About (aboutPageComponent)
 import Pages.NotFound (notFoundPageComponent)
-import Pages.Work (worksPageComponent)
-import Pages.Works (worksInfoPageComponent)
+import Pages.PostInfo (postInfoPageComponent)
+import Pages.Posts (postsPageComponent)
+import Pages.Works (worksPageComponent)
+import Pages.WorksInfo (workInfoPageComponent)
 
 main :: Effect Unit
 main = do
@@ -44,5 +46,7 @@ root = el "div" do
     pure $ case page of
       PageAbout -> aboutPageComponent
       PageWorks -> worksPageComponent
-      PageWorksInfo workId -> worksInfoPageComponent $ pure workId
+      PageWorkInfo workId -> workInfoPageComponent $ pure workId
+      PagePosts -> postsPageComponent
+      PagePostInfo postId -> postInfoPageComponent $ pure postId
       PageNotFound path -> notFoundPageComponent $ pure path

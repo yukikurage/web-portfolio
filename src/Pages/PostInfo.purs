@@ -1,34 +1,34 @@
-module Pages.WorksInfo where
+module Pages.PostInfo where
 
 import Prelude
 
-import Api.Works (getWorksInfo)
+import Api.Posts (getPostsInfo)
 import Components.Markdown (markdownComponent)
 import Contexts (Contexts)
 import Contexts.Page (usePage)
 import Data.Page (Page(..))
+import Data.Post (PostId)
 import Data.Tuple.Nested ((/\))
-import Data.Work (WorkId)
 import Effect.Aff (launchAff_)
 import Effect.Class (liftEffect)
 import Hooks.UseApi (FetchStatus(..), useApi)
 import Jelly (Component, Signal, chsSig, el, useSignal, writeAtom)
 import Routing.Hash (getHash)
 
-workInfoPageComponent :: Signal WorkId -> Component Contexts
-workInfoPageComponent workIdSig = el "div" do
-  workMaybeSig /\ fetch <- useApi $ getWorksInfo
+postInfoPageComponent :: Signal PostId -> Component Contexts
+postInfoPageComponent postIdSig = el "div" do
+  postMaybeSig /\ fetch <- useApi $ getPostsInfo
 
   useSignal do
-    workId <- workIdSig
-    liftEffect $ launchAff_ $ fetch workId
+    postId <- postIdSig
+    liftEffect $ launchAff_ $ fetch postId
 
   _ /\ pageAtom <- usePage
 
   chsSig do
-    workMaybe <- workMaybeSig
-    case workMaybe of
-      Fetched work -> pure [ markdownComponent $ pure $ work.content ]
+    postMaybe <- postMaybeSig
+    case postMaybe of
+      Fetched post -> pure [ markdownComponent $ pure $ post.content ]
       NotFetched -> pure []
       Failed -> do
         hash <- liftEffect $ getHash

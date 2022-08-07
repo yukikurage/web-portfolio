@@ -1,4 +1,4 @@
-module Pages.Works where
+module Pages.Posts where
 
 import Prelude
 
@@ -7,12 +7,12 @@ import Contexts (Contexts)
 import Hooks.UseClass (useClass)
 import Jelly (Component, ch, el, text)
 
-worksPageComponent :: Component Contexts
-worksPageComponent = el "div" do
+postsPageComponent :: Component Contexts
+postsPageComponent = el "div" do
   useClass $ pure "w-full"
 
   useClass $ pure "flex flex-col"
 
-  ch $ pageTitleComponent $ pure "Works"
+  ch $ pageTitleComponent $ pure "Blog"
 
-  ch $ text $ pure "Works Page"
+  ch $ text $ pure "Posts Page"
