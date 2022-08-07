@@ -2,9 +2,9 @@ module Data.Page where
 
 import Prelude
 
-import Data.Article (ArticleId)
 import Data.Either (either)
 import Data.Foldable (oneOf)
+import Data.Post (PostId)
 import Data.Work (WorkId)
 import Routing (match)
 import Routing.Match (Match, end, int, lit)
@@ -14,7 +14,7 @@ data Page
   | PageWorks
   | PageWorkInfo WorkId
   | PagePosts
-  | PagePostInfo ArticleId
+  | PagePostInfo PostId
   | PageNotFound String
 
 derive instance Eq Page
@@ -26,7 +26,7 @@ pageToHash = case _ of
   PageWorks -> "works"
   PageWorkInfo workId -> "works/" <> show workId
   PagePosts -> "posts"
-  PagePostInfo articleId -> "posts/" <> show articleId
+  PagePostInfo postId -> "posts/" <> show postId
   PageNotFound path -> path
 
 route :: Match Page
