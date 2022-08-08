@@ -2,6 +2,7 @@ module Main where
 
 import Prelude
 
+import Components.Background (backgroundComponent)
 import Components.Footer (footerComponent)
 import Components.Header (headerComponent)
 import Contexts (Contexts)
@@ -33,13 +34,14 @@ root = el "div" do
   useAdjustWindowHeight
 
   useColor CM.Primary CM.Text
-  useColor CM.Primary CM.Background
 
   useClass $ pure "font-default"
   useClass $ pure "w-screen"
   useClass $ pure "flex flex-col items-start"
 
   pageSig /\ _ <- usePage
+
+  ch $ backgroundComponent
 
   ch $ headerComponent
 

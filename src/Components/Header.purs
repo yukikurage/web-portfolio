@@ -26,7 +26,7 @@ headerComponent = el "div" do
     useLink $ pure PageTop
 
     useClass $ pure "text-3xl font-black font-Bungee"
-    useClass $ pure "py-2 overflow-hidden transition-all"
+    useClass $ pure "py-2 overflow-hidden transition-all rounded"
     useClass $ pure "flex justify-center items-center"
     useClass do
       page <- pageSig

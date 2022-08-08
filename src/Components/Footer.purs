@@ -17,13 +17,13 @@ useFooterColor = do
   useColorSig
     do
       ifM (eq PageTop <$> pageSig)
-        do pure Primary
+        do pure None
         do pure Reverse
     do pure Text
   useColorSig
     do
       ifM (eq PageTop <$> pageSig)
-        do pure Primary
+        do pure None
         do pure Reverse
     do pure Background
 
@@ -41,7 +41,7 @@ footerComponent = el "div" do
 
 copyRight :: Component Contexts
 copyRight = el "div" do
-  useClass $ pure "text-opacity-70"
+  useClass $ pure "text-opacity-80"
   useClass $ pure "flex flex-col gap-3"
 
   ch $ el "p" do
@@ -64,7 +64,7 @@ linkText :: Signal String -> Signal (Component Contexts) -> Component Contexts
 linkText linkSig componentSig = el "a" do
   useFooterColor
   useClass $ pure
-    "text-opacity-70 hover:text-opacity-100 transition-colors font-bold"
+    "text-opacity-80 hover:text-opacity-60 transition-colors font-bold"
 
   "href" := linkSig
   "target" := pure "_blank"
@@ -91,10 +91,10 @@ colorThemeToggleButton colorModeSig =
     let
       isCurrentColorThemeSig = eq <$> currentColorModeSig <*> colorModeSig
 
-    useClass $ pure "hover:opacity-100 transition-opacity font-bold"
+    useClass $ pure "hover:opacity-60 transition-opacity font-bold rounded-sm"
     useClass $ do
       isCurrentColorTheme <- isCurrentColorThemeSig
-      pure $ if isCurrentColorTheme then "opacity-100" else "opacity-80"
+      pure $ if isCurrentColorTheme then "opacity-60" else "opacity-100"
 
     on "click" \_ -> do
       colorMode <- readSignal colorModeSig

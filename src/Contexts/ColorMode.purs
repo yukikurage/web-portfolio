@@ -13,7 +13,7 @@ import Web.HTML.Window (localStorage)
 import Web.Storage.Storage (getItem, setItem)
 
 data ColorMode = Light | Dark | Summer | Winter | Hacker
-data ColorScheme = Primary | Highlight | Reverse | Disabled
+data ColorScheme = Primary | Highlight | Reverse | Disabled | None
 data ColorTarget = Text | Background
 
 derive instance Eq ColorMode
@@ -79,6 +79,7 @@ getColor = case _ of
     Disabled -> case _ of
       Text -> "text-neutral-600"
       Background -> "bg-white bg-opacity-80"
+    None -> const ""
   Dark -> case _ of
     Primary -> case _ of
       Text -> "text-white"
@@ -92,6 +93,7 @@ getColor = case _ of
     Disabled -> case _ of
       Text -> "text-zinc-300"
       Background -> "bg-zinc-900 bg-opacity-80"
+    None -> const ""
   Summer -> case _ of
     Primary -> case _ of
       Text -> "text-slate-700"
@@ -105,6 +107,7 @@ getColor = case _ of
     Disabled -> case _ of
       Text -> "text-slate-500"
       Background -> "bg-white bg-opacity-80"
+    None -> const ""
   Winter -> case _ of
     Primary -> case _ of
       Text -> "text-stone-100"
@@ -118,6 +121,7 @@ getColor = case _ of
     Disabled -> case _ of
       Text -> "text-stone-300"
       Background -> "bg-stone-900 bg-opacity-80"
+    None -> const ""
   Hacker -> case _ of
     Primary -> case _ of
       Text -> "text-white"
@@ -131,6 +135,7 @@ getColor = case _ of
     Disabled -> case _ of
       Text -> "text-neutral-300"
       Background -> "bg-black bg-opacity-80"
+    None -> const ""
 
 useColorSig
   :: forall r
