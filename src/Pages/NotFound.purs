@@ -46,11 +46,12 @@ notFoundPageComponent pathSig = el "div" do
         ch $ text $ pure "code: 404"
 
     ch $ el "div" do
-      useClass $ pure "absolute top-0 left-0 w-full h-full z-10 "
+      useClass $ pure
+        "absolute top-0 left-0 w-full h-full z-10 bg-stripe-yb opacity-40 bg-stripe-y"
       useClass $ pure "flex flex-col"
-      chs $ replicate 100 $ el "div" do
-        useClass $ pure "flex-1 overflow-hidden"
+-- chs $ replicate 100 $ el "div" do
+--   useClass $ pure "flex-1 overflow-hidden"
 
-        ch $ el "div" do
-          useClass $ pure
-            "h-[1px] bg-[#000000] opacity-20"
+--   ch $ el "div" do
+--     useClass $ pure
+--       "h-[1px] bg-[#000000] opacity-20"
