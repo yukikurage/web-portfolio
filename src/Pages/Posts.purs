@@ -11,7 +11,7 @@ postsPageComponent :: Component Contexts
 postsPageComponent = el "div" do
   useClass $ pure "w-full"
 
-  useClass $ pure "flex flex-col"
+  useClass $ pure "flex flex-col p-12"
 
   ch $ pageTitleComponent $ pure "Blog"
 
