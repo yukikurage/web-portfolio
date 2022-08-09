@@ -4,7 +4,7 @@ import Prelude
 
 import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor)
-import Data.Array (range, replicate)
+import Data.Array (range)
 import Data.Functor (mapFlipped)
 import Hooks.UseClass (useClass)
 import Hooks.UseDelayClass (useDelayClass)
@@ -12,7 +12,7 @@ import Jelly (Component, ch, chs, el, text)
 
 topPageComponent :: Component Contexts
 topPageComponent = el "div" do
-  useClass $ pure "relative w-full h-full"
+  useClass $ pure "fixed top-0 w-full h-full pointer-events-none"
   useClass $ pure "flex flex-col justify-center items-center gap-10"
 
   ch $ el "div" do

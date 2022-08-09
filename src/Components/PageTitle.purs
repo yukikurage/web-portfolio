@@ -10,7 +10,7 @@ import Jelly (Component, Signal, ch, el, text)
 
 pageTitleComponent :: Signal String -> Component Contexts
 pageTitleComponent titleSig = el "div" do
-  useClass $ pure "relative w-full py-8"
+  useClass $ pure "relative w-full"
 
   useClass $ pure "flex justify-center"
 
