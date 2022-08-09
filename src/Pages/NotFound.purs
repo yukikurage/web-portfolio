@@ -19,7 +19,7 @@ notFoundPageComponent pathSig = el "div" do
 
     ch $ el "div" do
 
-      useClass $ pure "text-5xl mb-10"
+      useClass $ pure "text-3xl md:text-5xl mb-10"
       ch $ text $ pure "˚‧º·(˚ ˃̣̣̥᷄⌓˂̣̣̥᷅ )‧º·˚ "
 
     ch $ el "div" do
