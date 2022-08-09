@@ -3,10 +3,9 @@ module Pages.NotFound where
 import Prelude
 
 import Contexts (Contexts)
-import Data.Array (replicate)
 import Hooks.UseClass (useClass)
 import Hooks.UsePopIn (usePopIn)
-import Jelly (Component, Signal, ch, chs, el, text, (:=))
+import Jelly (Component, Signal, ch, el, text, (:=))
 
 notFoundPageComponent :: Signal String -> Component Contexts
 notFoundPageComponent pathSig = el "div" do
@@ -47,11 +46,5 @@ notFoundPageComponent pathSig = el "div" do
 
     ch $ el "div" do
       useClass $ pure
-        "absolute top-0 left-0 w-full h-full z-10 bg-stripe-yb opacity-40 bg-stripe-y"
+        "absolute top-0 left-0 w-full h-full z-10 bg-stripe-yb opacity-20 bg-stripe-y"
       useClass $ pure "flex flex-col"
--- chs $ replicate 100 $ el "div" do
---   useClass $ pure "flex-1 overflow-hidden"
-
---   ch $ el "div" do
---     useClass $ pure
---       "h-[1px] bg-[#000000] opacity-20"
