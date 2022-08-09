@@ -37,6 +37,7 @@
 }
 
 .markdown p {
+  @apply text-base;
   @apply my-1;
   @apply ml-8;
 }
