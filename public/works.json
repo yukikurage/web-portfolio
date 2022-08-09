@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Jelly",
+    "thumbnailURL": "./img/JellyLogo.png",
+    "description": "PureScriptのためのシンプルな Web フレームワーク",
+    "workType": "web",
+    "link": "https://github.com/yukikurage/purescript-jelly"
+  },
+  {
+    "id": 1,
+    "title": "YUKINET",
+    "thumbnailURL": "./img/YUKINET_Screenshot.png",
+    "description": "ゆきくらげのWebページ",
+    "workType": "web",
+    "link": "http://localhost:5501/public/#"
+  }
+]

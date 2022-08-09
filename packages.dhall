@@ -99,8 +99,9 @@ in  upstream
 -------------------------------
 -}
 let upstream =
-      https://github.com/purescript/package-sets/releases/download/psc-0.15.0-20220523/packages.dhall
-        sha256:985f90fa68fd8b43b14c777d6ec2c161c4dd9009563b6f51685a54e4a26bf8ff
+      https://github.com/purescript/package-sets/releases/download/psc-0.15.4-20220808/packages.dhall
+        sha256:60eee64b04ca0013fae3e02a69fc3b176105c6baa2f31865c67cd5f881a412fd
+
 in  upstream
   with jelly =
     { dependencies =
@@ -120,8 +121,6 @@ in  upstream
       , "web-events"
       , "web-html"
       ]
-    , repo =
-        "https://github.com/yukikurage/purescript-jelly"
-    , version =
-        "v0.4.1"
+    , repo = "https://github.com/yukikurage/purescript-jelly"
+    , version = "v0.4.1"
     }

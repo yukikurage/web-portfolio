@@ -26,8 +26,11 @@ topPageComponent = el "div" do
 
     ch $ el "div" do
       useClass $ pure
-        "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-24 z-10 rounded-md overflow-hidden"
+        "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-24 z-10 rounded-md overflow-hidden transition-shadow duration-500"
       useClass $ pure "flex flex-row"
+
+      useDelayClass 1000 (pure "")
+        (pure "shadow-lg")
 
       chs $ mapFlipped (range 0 7) \i -> el "div" do
         useClass $ pure "flex-1 overflow-hidden"
@@ -37,7 +40,7 @@ topPageComponent = el "div" do
             "h-full transition-all"
           useDelayClass (50 + i * 50) (pure "w-[0%]") (pure "w-[101%]")
 
-          useDelayClass (50 + i * 50 + 1000) (pure "duration-700 ease-in-out")
+          useDelayClass (i * 50 + 100) (pure "duration-700 ease-in-out")
             (pure "")
 
           useColor Highlight Background
