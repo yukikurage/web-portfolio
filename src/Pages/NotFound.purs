@@ -24,7 +24,7 @@ notFoundPageComponent pathSig = el "div" do
     ch $ el "div" do
 
       useClass $ pure
-        "text-2xl font-Rubik font-black md:text-5xl mb-10 animate-glitch-text"
+        "text-2xl font-sans font-bold md:text-5xl mb-10 animate-glitch-text"
       ch $ text $ pure "˚‧º·(˚ ˃̣̣̥᷄⌓˂̣̣̥᷅ )‧º·˚ "
 
     ch $ el "div" do
