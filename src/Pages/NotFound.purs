@@ -5,6 +5,7 @@ import Prelude
 import Contexts (Contexts)
 import Data.Array (replicate)
 import Hooks.UseClass (useClass)
+import Hooks.UsePopIn (usePopIn)
 import Jelly (Component, Signal, ch, chs, el, text, (:=))
 
 notFoundPageComponent :: Signal String -> Component Contexts
@@ -17,6 +18,8 @@ notFoundPageComponent pathSig = el "div" do
     useClass $ pure "flex flex-col p-20 gap-6 relative overflow-hidden"
     useClass $ pure
       "bg-[#0000ff] text-white text-opacity-80 rounded-md bg-gradient-radial from-[#0000ff] to-[#0000cc]"
+
+    usePopIn
 
     ch $ el "div" do
 

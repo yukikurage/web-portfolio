@@ -10,5 +10,5 @@ usePopIn :: forall r. Hook r Unit
 usePopIn = do
   useClass $ pure "transition-all relative"
   useDelayClass 20
-    do pure "scale-90 opacity-0 -top-4"
-    do pure "scale-100 opacity-100 top-0"
+    do pure "opacity-0 -top-4"
+    do pure "opacity-100 top-0"
