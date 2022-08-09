@@ -38,13 +38,13 @@ module.exports = {
           },
           "70%": {
             "text-shadow":
-              "0px 0px 6px black, 5px 0px 3px #00A75B, -3px 0px 3px #96007A",
-            transform: "translate(-3px)",
+              "0px 0px 6px black, 10px 0px 3px #00A75B, -3px 0px 3px #96007A",
+            transform: "translate(-4px)",
           },
           "80%": {
             "text-shadow":
-              "0px 0px 6px black, -5px 0px 3px #00A75B, 3px 0px 3px #96007A",
-            transform: "translate(2px)",
+              "0px 0px 6px black, -30px 0px 3px #00A75B, 3px 0px 3px #96007A",
+            transform: "translate(50px)",
           },
         },
         "glitch": {
@@ -65,13 +65,13 @@ module.exports = {
           },
           "70%": {
             "box-shadow":
-              "0px 0px 6px black, 5px 0px 3px #00A75B, -3px 0px 3px #96007A",
-            transform: "translate(-3px)",
+              "0px 0px 6px black, 10px 0px 3px #00A75B, -3px 0px 3px #96007A",
+            transform: "translate(-4px)",
           },
           "80%": {
             "box-shadow":
-              "0px 0px 6px black, -5px 0px 3px #00A75B, 3px 0px 3px #96007A",
-            transform: "translate(2px)",
+              "0px 0px 6px black, -30px 0px 3px #00A75B, 3px 0px 3px #96007A",
+            transform: "translate(50px)",
           },
         },
       },
