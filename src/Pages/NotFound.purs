@@ -13,8 +13,6 @@ notFoundPageComponent pathSig = el "div" do
 
   useClass $ pure "flex flex-col items-center p-12 gap-12"
 
-  ch $ pageTitleComponent $ pure "NOT FOUND"
-
   ch $ el "div" do
     useClass $ pure "flex flex-col p-20 gap-6"
     useClass $ pure "bg-[#0000ff] text-white rounded-md"
