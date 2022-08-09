@@ -42,8 +42,8 @@
 }
 
 .markdown pre {
-  @apply bg-gray-500;
-  @apply bg-opacity-20;
+  @apply bg-gray-400;
+  @apply bg-opacity-30;
   @apply py-3;
   @apply px-5;
   @apply rounded;

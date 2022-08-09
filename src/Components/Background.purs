@@ -24,8 +24,8 @@ backgroundComponent = el "div" do
       mousePosX /\ mousePosY <- mousePosSig
 
       let
-        mousePosXDiff = mousePosX / 50
-        mousePosYDiff = mousePosY / 50
+        mousePosXDiff = mousePosX / 100
+        mousePosYDiff = mousePosY / 100
 
       pure $ "transform:translate(calc(-50% + " <> show mousePosXDiff
         <> "px), calc(-50% + "
@@ -38,7 +38,7 @@ backgroundComponent = el "div" do
       "w-full h-full fixed top-1/2 left-1/2 -z-10 opacity-50 transition-all duration-500 ease-linear"
     useClass do
       page <- pageSig
-      pure $ if page == PageTop then "opacity-80" else "opacity-20"
+      pure $ if page == PageTop then "opacity-60" else "opacity-10"
 
     ch $ el "div" do
       useDelayClass 100
@@ -63,9 +63,9 @@ backgroundComponent = el "div" do
     ch $ el "div" do
       useDelayClass 400
         do pure "w-0 h-0 rotate-[40deg]"
-        do pure "w-[600px] h-[600px] -rotate-[10deg]"
+        do pure "w-[800px] h-[800px] -rotate-[10deg]"
       useClass $ pure
-        "absolute bottom-0 right-0 translate-x-24 translate-y-6  transition-all ease-in-out rounded-3xl"
+        "absolute bottom-0 right-0 translate-x-40 translate-y-32 transition-all ease-in-out rounded-3xl"
       useDelayClass 1000 (pure "duration-[2000ms]")
         (pure "")
       useColor Highlight Background
@@ -73,9 +73,9 @@ backgroundComponent = el "div" do
     ch $ el "div" do
       useDelayClass 900
         do pure "w-0 h-0 rotate-[10deg]"
-        do pure "w-[200px] h-[200px]"
+        do pure "w-[400px] h-[400px]"
       useClass $ pure
-        "absolute bottom-0 right-0 translate-x-20 translate-y-8 -rotate-[20deg] transition-all ease-in-out rounded-3xl"
+        "absolute bottom-0 right-0 translate-x-32 translate-y-8 -rotate-[20deg] transition-all ease-in-out rounded-3xl"
       useDelayClass 1000 (pure "duration-[2000ms]")
         (pure "")
       useColor Primary Background

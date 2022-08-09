@@ -17,13 +17,13 @@ useFooterColor = do
   useColorSig
     do
       ifM (eq PageTop <$> pageSig)
-        do pure None
+        do pure Transparent
         do pure Reverse
     do pure Text
   useColorSig
     do
       ifM (eq PageTop <$> pageSig)
-        do pure None
+        do pure Transparent
         do pure Reverse
     do pure Background
 
