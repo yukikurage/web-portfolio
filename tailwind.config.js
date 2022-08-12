@@ -23,54 +23,54 @@ module.exports = {
         "glitch-text": {
           "0%, 9%, 11%, 39%, 41%, 69%, 71%, 79%, 81%, 100%": {
             "text-shadow":
-              "0px 0px 6px black, 0px 0px 3px #00A75B, 0px 0px 3px #96007A",
+              "0px 0px 4px white, 0px 0px 3px #00A75B, 0px 0px 3px #96007A",
             transform: "translate(0px)",
           },
           "10%": {
             "text-shadow":
-              "0px 0px 6px black, 5px 0px 3px #00A75B, -3px 0px 3px #96007A",
+              "0px 0px 6px white, 5px 0px 3px #00A75B, -3px 0px 3px #96007A",
             transform: "translate(-1px)",
           },
           "40%": {
             "text-shadow":
-              "0px 0px 6px black, -5px 0px 3px #96007A, 3px 0px 3px #00A75B",
+              "-5px 0px 3px #96007A, 3px 0px 3px #00A75B",
             transform: "translate(2px)",
           },
           "70%": {
             "text-shadow":
-              "0px 0px 6px black, 10px 0px 3px #00A75B, -3px 0px 3px #96007A",
+              "0px 0px 6px white, 10px 0px 3px #00A75B, -3px 0px 3px #96007A",
             transform: "translate(-4px)",
           },
           "80%": {
             "text-shadow":
-              "0px 0px 6px black, -30px 0px 3px #00A75B, 3px 0px 3px #96007A",
+              "0px 0px 6px white, -30px 0px 3px #00A75B, 3px 0px 3px #96007A",
             transform: "translate(50px)",
           },
         },
         "glitch": {
           "0%, 9%, 11%, 39%, 41%, 69%, 71%, 79%, 81%, 100%": {
             "box-shadow":
-              "0px 0px 6px black, 0px 0px 3px #00A75B, 0px 0px 3px #96007A",
+              "0px 0px 4px white, 0px 0px 3px #00A75B, 0px 0px 3px #96007A",
             transform: "translate(0px)",
           },
           "10%": {
             "box-shadow":
-              "0px 0px 6px black, 5px 0px 3px #00A75B, -3px 0px 3px #96007A",
+              "0px 0px 6px white, 5px 0px 3px #00A75B, -3px 0px 3px #96007A",
             transform: "translate(-1px)",
           },
           "40%": {
             "box-shadow":
-              "0px 0px 6px black, -5px 0px 3px #96007A, 3px 0px 3px #00A75B",
+              "-5px 0px 3px #96007A, 3px 0px 3px #00A75B",
             transform: "translate(2px)",
           },
           "70%": {
             "box-shadow":
-              "0px 0px 6px black, 10px 0px 3px #00A75B, -3px 0px 3px #96007A",
+              "0px 0px 6px white, 10px 0px 3px #00A75B, -3px 0px 3px #96007A",
             transform: "translate(-4px)",
           },
           "80%": {
             "box-shadow":
-              "0px 0px 6px black, -30px 0px 3px #00A75B, 3px 0px 3px #96007A",
+              "0px 0px 6px white, -30px 0px 3px #00A75B, 3px 0px 3px #96007A",
             transform: "translate(50px)",
           },
         },
