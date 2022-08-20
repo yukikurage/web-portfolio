@@ -54,7 +54,8 @@ backgroundComponent = el "div" do
       "w-[110%] h-[110%] fixed top-1/2 left-1/2 -z-10 opacity-50 transition-all duration-500 ease-linear"
     useClass do
       page <- pageSig
-      pure $ if page == PageTop then "opacity-50 blur-sm" else "opacity-40 blur"
+      pure $
+        if page == PageTop then "opacity-60 blur-sm" else "opacity-30 blur-lg"
 
     ch $ el "img" do
       i <- liftEffect $ randomInt 0 $ length bgImgList - 1
