@@ -7,6 +7,7 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         "stripe-y" : "repeating-linear-gradient(0deg,#ffffff00, #ffffff00 2px, #000 2px, #000 4px)",
+        "stripe-y-2xl" : "repeating-linear-gradient(var(--tw-rotate),#ffffff00, #ffffff00 30px, #000 30px, #000 60px)",
       },
       fontFamily: {
         Rubik: ["Rubik", "sans-serif"],
