@@ -25,6 +25,7 @@ to generate this file without the comments in this block.
   , "jelly"
   , "maybe"
   , "prelude"
+  , "random"
   , "routing"
   , "simple-json"
   , "strings"
