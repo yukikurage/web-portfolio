@@ -25,7 +25,7 @@ worksPageComponent = el "div" do
   useClass $ pure "w-full"
   useClass $ pure "flex flex-col p-12 gap-20 items-center"
 
-  ch $ pageTitleComponent $ pure "#Works"
+  ch $ pageTitleComponent $ pure "Works"
   chSig do
     worksStatus <- worksStatusSig
     pure case worksStatus of
@@ -81,6 +81,6 @@ worksPageComponent = el "div" do
                   chs $ mapFlipped work.tags \tag -> el "p" do
                     useClass $ pure "text-sm"
 
-                    ch $ text $ pure $ tag
+                    ch $ text $ pure $ "#" <> tag
 
       _ -> el "div" $ pure unit

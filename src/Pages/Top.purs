@@ -48,17 +48,17 @@ topPageComponent = el "div" do
     useDelayClass 100 (pure "opacity-0") (pure "opacity-100")
 
     ch $ navigationTabComponent
-      { titleSig: pure "#About"
+      { titleSig: pure "About"
       , refPageSig: pure PageAbout
       , classSig: pure "text-4xl"
       }
     ch $ navigationTabComponent
-      { titleSig: pure "#Works"
+      { titleSig: pure "Works"
       , refPageSig: pure PageWorks
       , classSig: pure "text-4xl"
       }
     ch $ navigationTabComponent
-      { titleSig: pure "#Blog"
+      { titleSig: pure "Blog"
       , refPageSig: pure PagePosts
       , classSig: pure "text-4xl"
       }

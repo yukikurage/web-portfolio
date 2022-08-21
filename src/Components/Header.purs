@@ -43,17 +43,17 @@ headerComponent = el "div" do
     useClass $ pure "flex flex-row"
 
     ch $ navigationTabComponent
-      { titleSig: pure "#About"
+      { titleSig: pure "About"
       , refPageSig: pure PageAbout
       , classSig: pure ""
       }
     ch $ navigationTabComponent
-      { titleSig: pure "#Works"
+      { titleSig: pure "Works"
       , refPageSig: pure PageWorks
       , classSig: pure ""
       }
     ch $ navigationTabComponent
-      { titleSig: pure "#Blog"
+      { titleSig: pure "Blog"
       , refPageSig: pure PagePosts
       , classSig: pure ""
       }
