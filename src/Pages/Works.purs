@@ -25,7 +25,7 @@ worksPageComponent = el "div" do
   useClass $ pure "w-full"
   useClass $ pure "flex flex-col p-12 gap-20 items-center"
 
-  ch $ pageTitleComponent $ pure "Works"
+  ch $ pageTitleComponent $ pure "#Works"
   chSig do
     worksStatus <- worksStatusSig
     pure case worksStatus of
@@ -43,7 +43,7 @@ worksPageComponent = el "div" do
                 "src" := pure work.thumbnailURL
                 "alt" := pure work.title
                 useClass $ pure
-                  "absolute left-0 bottom-0 w-full h-3/4 object-cover transition-all group-hover:blur-sm group-hover:scale-105"
+                  "absolute left-0 bottom-0 w-full h-3/4 object-cover transition-all group-hover:blur-sm group-hover:scale-105 duration-500"
 
               ch $ el "div" do
                 useClass $ pure
@@ -71,7 +71,7 @@ worksPageComponent = el "div" do
 
               ch $ el "div" do
                 useClass $ pure
-                  "absolute pointer-events-none w-full p-4 flex flex-col gap-2"
+                  "absolute top-0 left-0 pointer-events-none w-full p-4 flex flex-col gap-2"
                 useColor Reverse Text
                 ch $ el "h1" do
                   useClass $ pure "text-2xl font-bold"

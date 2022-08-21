@@ -4,20 +4,20 @@ import Prelude
 
 import Data.Tuple.Nested ((/\))
 import Hooks.UseClass (useClass)
-import Jelly (Component, Hook, el, on, signal, writeAtom, (:=))
+import Jelly (Component, Hook, ch, el, on, signal, writeAtom, (:=))
 
 imageComponent :: forall r. Hook r Unit -> Component r
-imageComponent hooks = el "img" do
-  "loading" := pure "lazy"
-
+imageComponent hooks = el "div" do
   isLoadedSig /\ isLoadedAtom <- signal false
 
   useClass do
     isLoaded <- isLoadedSig
     pure $ if isLoaded then "opacity-100" else "opacity-0"
 
-  useClass $ pure "transition-opacity duration-500"
+  useClass $ pure "transition-opacity duration-500 w-full h-full"
 
-  on "load" \_ -> writeAtom isLoadedAtom true
+  ch $ el "img" do
+    "loading" := pure "lazy"
 
-  hooks
+    on "load" \_ -> writeAtom isLoadedAtom true
+    hooks
