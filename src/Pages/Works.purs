@@ -4,8 +4,10 @@ import Prelude
 
 import Api.Works (getWorks)
 import Components.ForeignLink (foreignLinkComponent)
+import Components.Image (imageComponent)
 import Components.PageTitle (pageTitleComponent)
 import Contexts (Contexts)
+import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor)
 import Data.Functor (mapFlipped)
 import Data.Tuple.Nested ((/\))
 import Effect.Aff (launchAff_)
@@ -21,7 +23,7 @@ worksPageComponent = el "div" do
   liftEffect $ launchAff_ $ fetchWorks unit
 
   useClass $ pure "w-full"
-  useClass $ pure "flex flex-col p-12 gap-16 items-center"
+  useClass $ pure "flex flex-col p-12 gap-20 items-center"
 
   ch $ pageTitleComponent $ pure "Works"
   chSig do
@@ -29,23 +31,56 @@ worksPageComponent = el "div" do
     pure case worksStatus of
       Fetched works -> el "div" do
         useClass $ pure "w-3/4"
-        useClass $ pure "flex flex-col gap-10"
+        useClass $ pure "flex flex-row gap-10"
         usePopIn
-        chs $ mapFlipped works \work -> el "div" do
-          useClass $ pure "flex flex-row gap-16"
-          ch $ foreignLinkComponent (pure work.link) $ pure $ el "img" do
-            "src" := pure work.thumbnailURL
-            "alt" := pure work.title
-            useClass $ pure
-              "w-64 h-36 object-cover rounded shadow-md hover:opacity-80 transition-opacity"
-          ch $ el "div" do
-            ch $ foreignLinkComponent (pure work.link) $ pure $ el "h1" do
-              useClass $ pure "text-2xl my-3 font-bold"
-              ch $ text $ pure work.title
+        chs $ mapFlipped works \work -> foreignLinkComponent (pure work.link)
+          $ pure
+          $ el "div" do
               useClass $ pure
-                "hover:opacity-80 transition-opacity"
-            ch $ el "p" do
-              useClass $ pure "text-lg ml-4"
-              ch $ text $ pure work.description
+                "relative w-60 h-72 overflow-hidden rounded shadow-md group"
+
+              ch $ imageComponent do
+                "src" := pure work.thumbnailURL
+                "alt" := pure work.title
+                useClass $ pure
+                  "absolute left-0 bottom-0 w-full h-3/4 object-cover transition-all group-hover:blur-sm group-hover:scale-105"
+
+              ch $ el "div" do
+                useClass $ pure
+                  "absolute left-0 top-0 w-full h-full opacity-0 group-hover:opacity-40 transition-opacity"
+
+                useColor Primary Background
+
+              ch $ el "p" do
+                useClass $ pure
+                  "absolute left-0 top-[170px] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none p-3"
+                useClass $ pure "text-lg"
+                ch $ text $ pure work.description
+
+              ch $ el "div" do
+                useClass $ pure
+                  "absolute h-[210px] w-[150%] rotate-3 -left-1/4 -top-1/4 pointer-events-none shadow-md"
+
+                useColor Highlight Background
+
+              ch $ el "div" do
+                useClass $ pure
+                  "absolute h-[200px] w-[150%] -rotate-6 -left-1/4 -top-1/4 pointer-events-none shadow-md"
+
+                useColor Reverse Background
+
+              ch $ el "div" do
+                useClass $ pure
+                  "absolute pointer-events-none w-full p-4 flex flex-col gap-2"
+                useColor Reverse Text
+                ch $ el "h1" do
+                  useClass $ pure "text-2xl font-bold"
+                  ch $ text $ pure work.title
+                ch $ el "div" do
+                  useClass $ pure "flex flex-row gap-2 opacity-90 flex-wrap"
+                  chs $ mapFlipped work.tags \tag -> el "p" do
+                    useClass $ pure "text-sm"
+
+                    ch $ text $ pure $ tag
 
       _ -> el "div" $ pure unit

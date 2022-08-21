@@ -2,6 +2,7 @@ module Components.Background where
 
 import Prelude
 
+import Components.Image (imageComponent)
 import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor)
 import Contexts.Page (usePage)
@@ -51,53 +52,13 @@ backgroundComponent = el "div" do
     pageSig /\ _ <- usePage
 
     useClass $ pure
-      "w-[110%] h-[110%] fixed top-1/2 left-1/2 -z-10 opacity-50 transition-all duration-500 ease-linear"
+      "w-[110%] h-[110%] fixed top-1/2 left-1/2 -z-10 transition-all duration-500 ease-linear"
     useClass do
       page <- pageSig
       pure $
-        if page == PageTop then "opacity-60 blur-sm" else "opacity-30 blur-lg"
+        if page == PageTop then "opacity-50 blur-sm" else "opacity-20 blur-lg"
 
-    ch $ el "img" do
+    ch $ imageComponent do
       i <- liftEffect $ randomInt 0 $ length bgImgList - 1
       useClass $ pure "w-full h-full object-cover"
       "src" := pure (fromMaybe "/img/hina.png" $ bgImgList !! i)
-
--- ch $ el "div" do
---   useDelayClass 300
---     do pure "w-[400%]"
---     do pure "w-[90%]"
---   useClass $ pure
---     "absolute top-1/2 left-1/2 rounded-full transition-all -translate-x-1/2 -translate-y-1/2 aspect-square shadow-lg"
---   useDelayClass 500 (pure "duration-[2000ms]")
---     (pure "")
---   useColor Highlight Background
-
--- ch $ el "div" do
---   useDelayClass 100
---     do pure "w-[400%]"
---     do pure "w-[70%]"
---   useClass $ pure
---     "absolute top-1/2 left-1/2 rounded-full transition-all -translate-x-1/2 -translate-y-1/2 aspect-square shadow-lg"
---   useDelayClass 300 (pure "duration-[2000ms]")
---     (pure "")
---   useColor Primary Background
-
--- ch $ el "div" do
---   useDelayClass 200
---     do pure "w-0"
---     do pure "w-[60%]"
---   useClass $ pure
---     "absolute top-1/2 left-1/2 rounded-full transition-all -translate-x-1/2 -translate-y-1/2 aspect-square shadow-lg"
---   useDelayClass 400 (pure "duration-[2000ms]")
---     (pure "")
---   useColor Highlight Background
-
--- ch $ el "div" do
---   useDelayClass 300
---     do pure "w-0"
---     do pure "w-[58%]"
---   useClass $ pure
---     "absolute top-1/2 left-1/2 rounded-full transition-all -translate-x-1/2 -translate-y-1/2 aspect-square shadow-lg"
---   useDelayClass 500 (pure "duration-[2000ms]")
---     (pure "")
---   useColor Primary Background

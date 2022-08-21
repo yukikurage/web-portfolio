@@ -2,17 +2,25 @@
   {
     "id": 1,
     "title": "Jelly",
-    "thumbnailURL": "./img/JellyLogo.png",
-    "description": "PureScriptのためのシンプルな Web フレームワーク",
-    "workType": "web",
+    "thumbnailURL": "./img/Jelly.png",
+    "description": "PureScriptのためのWebフレームワーク",
+    "tags": ["WebApp", "PureScript", "aaaaaaaa", "aaaaa"],
     "link": "https://github.com/yukikurage/purescript-jelly"
   },
   {
-    "id": 1,
+    "id": 2,
     "title": "YUKINET",
-    "thumbnailURL": "./img/YUKINET_Screenshot.png",
+    "thumbnailURL": "./img/Yukinet_Screenshot.png",
     "description": "ゆきくらげのWebページ",
-    "workType": "web",
+    "tags": ["WebApp"],
     "link": "https://yukikurage.github.io/web-portfolio/#"
+  },
+  {
+    "id": 3,
+    "title": "MANDELBROT",
+    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
+    "description": "マンデルブロ集合を描画",
+    "tags": ["WebApp", "WebGL"],
+    "link": "https://yukikurage.github.io/mandelbrot/"
   }
 ]
