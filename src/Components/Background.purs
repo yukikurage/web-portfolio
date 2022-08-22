@@ -20,11 +20,12 @@ bgImgList :: Array String
 bgImgList =
   [ "img/hina.png"
   , "img/IrisOut.png"
-  , "img/20220508.png"
   , "img/yukikurage2.png"
   , "img/comi.png"
-  , "img/20200920.png"
+  , "img/20200107.png"
   , "img/20210504.png"
+  , "img/Dot.png"
+  , "img/thumbnail8.png"
   ]
 
 useMouseMove :: Int -> Hook Contexts Unit
@@ -48,17 +49,29 @@ backgroundComponent = el "div" do
   useColor Primary Background
 
   ch $ el "div" do
-    useMouseMove 50
     pageSig /\ _ <- usePage
 
     useClass $ pure
-      "w-[110%] h-[110%] fixed top-1/2 left-1/2 -z-10 transition-all duration-500 ease-linear"
-    useClass do
-      page <- pageSig
-      pure $
-        if page == PageTop then "opacity-50 blur-sm" else "opacity-20 blur-lg"
+      "w-[110%] h-[110%] fixed -z-10"
 
     ch $ imageComponent do
+      useMouseMove 50
       i <- liftEffect $ randomInt 0 $ length bgImgList - 1
-      useClass $ pure "w-full h-full object-cover"
+      useClass $ pure
+        "absolute top-1/2 left-1/2 w-full h-full object-cover transition-all duration-500 ease-linear"
       "src" := pure (fromMaybe "/img/hina.png" $ bgImgList !! i)
+      useClass do
+        page <- pageSig
+        pure $
+          if page == PageTop then "opacity-50 blur-sm" else "opacity-40 blur"
+
+    ch $ el "div" do
+      useClass $ pure
+        "absolute -top-1/4 -left-1/4 w-2/3 h-[150%] rotate-12 transition-all shadow-md"
+      useClass do
+        page <- pageSig
+        pure $
+          if page == PageTop then "opacity-70"
+          else "opacity-0 blur -translate-x-6"
+
+      useColor Primary Background

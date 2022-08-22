@@ -23,7 +23,7 @@ worksPageComponent = el "div" do
   liftEffect $ launchAff_ $ fetchWorks unit
 
   useClass $ pure "w-full"
-  useClass $ pure "flex flex-col p-12 gap-20 items-center"
+  useClass $ pure "flex flex-col p-10 gap-28 items-center"
 
   ch $ pageTitleComponent $ pure "Works"
   chSig do
@@ -36,8 +36,10 @@ worksPageComponent = el "div" do
         chs $ mapFlipped works \work -> foreignLinkComponent (pure work.link)
           $ pure
           $ el "div" do
+              useColor Primary Background
+
               useClass $ pure
-                "relative w-60 h-72 overflow-hidden rounded shadow-md group"
+                "relative w-60 h-72 overflow-hidden rounded shadow-md group bg-opacity-70"
 
               ch $ imageComponent do
                 "src" := pure work.thumbnailURL
@@ -59,13 +61,13 @@ worksPageComponent = el "div" do
 
               ch $ el "div" do
                 useClass $ pure
-                  "absolute h-[210px] w-[150%] rotate-3 -left-1/4 -top-1/4 pointer-events-none shadow-md"
+                  "absolute h-[210px] w-[150%] -rotate-6 -left-1/4 -top-1/4 pointer-events-none shadow-md transition-all"
 
                 useColor Highlight Background
 
               ch $ el "div" do
                 useClass $ pure
-                  "absolute h-[200px] w-[150%] -rotate-6 -left-1/4 -top-1/4 pointer-events-none shadow-md"
+                  "absolute h-[200px] w-[150%] -rotate-6 -left-1/4 -top-1/4 pointer-events-none shadow-md transition-all"
 
                 useColor Reverse Background
 
