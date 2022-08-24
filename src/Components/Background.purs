@@ -46,7 +46,7 @@ useMouseMove n = do
 backgroundComponent :: Component Contexts
 backgroundComponent = el "div" do
   useClass $ pure "w-[110%] h-[110%] fixed -top-[5%] -left-[5%] -z-20"
-  useColor Primary Background
+  useColor Disabled Background
 
   pageSig /\ _ <- usePage
 
