@@ -12,9 +12,8 @@ import Contexts.Page (usePage)
 import Data.Page (Page(..))
 import Data.Tuple.Nested ((/\))
 import Hooks.UseClass (useClass)
-import Hooks.UseInnerHTML (useInnerHTML)
 import Hooks.UseLink (useLink)
-import Jelly (Component, ch, el, text)
+import Jelly (Component, ch, el)
 
 headerComponent :: Component Contexts
 headerComponent = el "div" do
@@ -29,17 +28,21 @@ headerComponent = el "div" do
 
   ch $ el "a" do
     useColor Reverse Text
-    useColor Highlight Background
 
     useLink $ pure PageTop
 
     useClass $ pure "text-3xl font-black font-Bungee"
-    useClass $ pure "py-2 overflow-hidden transition-all rounded shadow-md"
+    useClass $ pure "relative py-2 rounded"
     useClass $ pure "flex justify-center items-center gap-2"
     useClass $ pure "h-12 w-24"
     useClass $ pure "stroke-current"
 
     ch $ logoComponent
+
+    ch $ el "div" do
+      useClass $ pure
+        "absolute top-0 left-0 h-full w-full rounded-md shadow-md transition-all transform-gpu -skew-x-[9deg] -z-10"
+      useColor Highlight Background
 
   ch $ el "div" do
     useClass $ pure "flex-grow"

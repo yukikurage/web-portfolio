@@ -67,7 +67,7 @@ backgroundComponent = el "div" do
     useClass do
       page <- pageSig
       pure $
-        if page == PageTop then "opacity-70 rotate-12"
+        if page == PageTop then "opacity-70 rotate-[9deg]"
         else "opacity-0 blur -translate-x-20 rotate-6"
 
     useColor Primary Background

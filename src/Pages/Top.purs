@@ -19,7 +19,7 @@ topPageComponent = el "div" do
   ch $ el "div" do
     useClass $ pure "h-24 w-[30rem]"
     useClass $ pure
-      "flex flex-col justify-center items-center relative overflow-hidden"
+      "flex flex-col justify-center items-center relative"
 
     ch $ el "div" do
       useColor Reverse Text
@@ -34,7 +34,7 @@ topPageComponent = el "div" do
     ch $ el "div" do
       useDelayClass 200 (pure "w-0") (pure "w-full")
       useClass $ pure
-        "absolute top-0 left-0 h-full rounded-md shadow-lg transition-all"
+        "absolute top-0 left-0 h-full  rounded-md shadow-lg transition-all transform-gpu -skew-x-[9deg]"
       useColor Highlight Background
       useDelayClass 400 (pure "duration-500") (pure "")
 
