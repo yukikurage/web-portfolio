@@ -14,6 +14,7 @@ module.exports = {
         ZenKaku: ["Zen Kaku Gothic New", "sans-serif"],
         Bungee: ["Bungee", "cursive"],
         SourceCodePro: ["Source Code Pro", "monospace"],
+        PassionOne: [ 'Passion One', 'cursive'],
         default: ["Rubik", "Zen Kaku Gothic New", "sans-serif"],
       },
       animation: {
