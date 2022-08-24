@@ -14,6 +14,7 @@ import Effect.Aff (launchAff_)
 import Effect.Class (liftEffect)
 import Hooks.UseApi (FetchStatus(..), useApi)
 import Hooks.UseClass (useClass)
+import Hooks.UsePopIn (usePopIn)
 import Jelly (Component, Signal, ch, chsSig, el, text, useSignal, writeAtom)
 import Routing.Hash (getHash)
 
@@ -35,6 +36,8 @@ postInfoPageComponent postIdSig = el "div" do
     case postMaybe of
       Fetched post -> pure
         [ el "div" do
+            usePopIn
+
             useClass $ pure "w-3/4 flex flex-col gap-4 items-start"
 
             ch $ el "div" do

@@ -6,10 +6,12 @@ import Api.Posts (getPosts)
 import Components.PageTitle (pageTitleComponent)
 import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor)
+import Contexts.Page (usePage)
 import Data.Functor (mapFlipped)
 import Data.Int (floor)
 import Data.JSDate (JSDate)
 import Data.JSDate as JSDate
+import Data.Page (Page(..))
 import Data.Tuple.Nested ((/\))
 import Effect (Effect)
 import Effect.Aff (launchAff_)
@@ -17,15 +19,16 @@ import Effect.Class (liftEffect)
 import Hooks.UseApi (FetchStatus(..), useApi)
 import Hooks.UseClass (useClass)
 import Hooks.UsePopIn (usePopIn)
-import Jelly (Component, ch, chSig, chs, el, text)
+import Jelly (Component, ch, chSig, chs, el, on, text, writeAtom)
 
 postsPageComponent :: Component Contexts
 postsPageComponent = el "div" do
   postsStatusSig /\ fetchWorks <- useApi $ \_ -> getPosts
   liftEffect $ launchAff_ $ fetchWorks unit
+  _ /\ pageAtom <- usePage
 
   useClass $ pure "w-full"
-  useClass $ pure "flex flex-col p-10 gap-28 items-center"
+  useClass $ pure "flex flex-col p-10 gap-20 items-center"
 
   ch $ pageTitleComponent $ pure "Blog"
 
@@ -39,6 +42,8 @@ postsPageComponent = el "div" do
         usePopIn
         chs $ mapFlipped posts \post -> el "div" do
           useColor Primary Background
+
+          on "click" \_ -> writeAtom pageAtom $ PagePostInfo post.id
 
           useClass $ pure
             "relative w-full overflow-hidden rounded shadow-md group p-4 cursor-pointer hover:opacity-80 transition-opacity"

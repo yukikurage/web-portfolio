@@ -23,7 +23,7 @@ worksPageComponent = el "div" do
   liftEffect $ launchAff_ $ fetchWorks unit
 
   useClass $ pure "w-full"
-  useClass $ pure "flex flex-col p-10 gap-28 items-center"
+  useClass $ pure "flex flex-col p-10 gap-20 items-center"
 
   ch $ pageTitleComponent $ pure "Works"
   chSig do
