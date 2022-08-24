@@ -6,6 +6,14 @@ Web 系のポートフォリオサイト兼ブログです。
 
 ああああ
 
+```javascript
+const x = 2;
+const f = (v) => {
+  return v * x;
+};
+// コメント
+```
+
 ## うお
 
 ## うお

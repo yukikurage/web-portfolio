@@ -30,8 +30,9 @@ worksPageComponent = el "div" do
     worksStatus <- worksStatusSig
     pure case worksStatus of
       Fetched works -> el "div" do
-        useClass $ pure "w-3/4"
-        useClass $ pure "flex flex-row gap-10"
+        useClass $ pure "w-full md:w-3/4"
+        useClass $ pure
+          "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12"
         usePopIn
         chs $ mapFlipped works \work -> foreignLinkComponent (pure work.link)
           $ pure
@@ -39,42 +40,30 @@ worksPageComponent = el "div" do
               useColor Primary Background
 
               useClass $ pure
-                "relative w-60 h-72 overflow-hidden rounded shadow-md group bg-opacity-70"
+                "relative w-full h-52 overflow-hidden rounded shadow-md group bg-opacity-70"
 
               ch $ imageComponent do
                 "src" := pure work.thumbnailURL
                 "alt" := pure work.title
                 useClass $ pure
-                  "absolute left-0 bottom-0 w-full h-3/4 object-cover transition-all group-hover:blur-sm group-hover:scale-105 duration-500"
+                  "absolute top-0 left-0 w-full h-full object-cover transition-all group-hover:blur-sm group-hover:scale-105"
 
               ch $ el "div" do
                 useClass $ pure
-                  "absolute left-0 top-0 w-full h-full opacity-0 group-hover:opacity-40 transition-opacity"
-
-                useColor Primary Background
-
-              ch $ el "p" do
-                useClass $ pure
-                  "absolute left-0 top-[170px] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none p-3"
-                useClass $ pure "text-lg"
-                ch $ text $ pure work.description
-
-              ch $ el "div" do
-                useClass $ pure
-                  "absolute h-[210px] w-[150%] -rotate-6 -left-1/4 -top-1/4 pointer-events-none shadow-md transition-all"
-
-                useColor Highlight Background
-
-              ch $ el "div" do
-                useClass $ pure
-                  "absolute h-[200px] w-[150%] -rotate-6 -left-1/4 -top-1/4 pointer-events-none shadow-md transition-all"
+                  "absolute left-0 top-0 w-full h-full opacity-20 transition-opacity"
 
                 useColor Reverse Background
 
               ch $ el "div" do
                 useClass $ pure
+                  "absolute h-[8rem] w-[120%] -rotate-6 -left-[10%] -top-[2rem] pointer-events-none transition-all overflow-hidden"
+
+                useColor Primary Background
+
+              ch $ el "div" do
+                useClass $ pure
                   "absolute top-0 left-0 pointer-events-none w-full p-4 flex flex-col gap-2"
-                useColor Reverse Text
+                useColor Primary Text
                 ch $ el "h1" do
                   useClass $ pure "text-2xl font-bold"
                   ch $ text $ pure work.title

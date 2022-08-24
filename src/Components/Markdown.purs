@@ -3,11 +3,13 @@ module Components.Markdown where
 import Prelude
 
 import Contexts (Contexts)
+import Effect (Effect)
+import Effect.Class (liftEffect)
 import Hooks.UseClass (useClass)
 import Hooks.UseInnerHTML (useInnerHTML)
 import Jelly (Component, Signal, el)
 
-foreign import parseMarkdown :: String -> String
+foreign import parseMarkdown :: String -> Effect String
 
 type Props = Signal String
 
@@ -17,6 +19,6 @@ markdownComponent value = el "div" do
 
   useInnerHTML do
     v <- value
-    pure $ parseMarkdown v
+    liftEffect $ parseMarkdown v
 
   pure unit

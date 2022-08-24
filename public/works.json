@@ -22,5 +22,53 @@
     "description": "マンデルブロ集合を描画",
     "tags": ["WebApp", "WebGL"],
     "link": "https://yukikurage.github.io/mandelbrot/"
+  },
+  {
+    "id": 3,
+    "title": "MANDELBROT",
+    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
+    "description": "マンデルブロ集合を描画",
+    "tags": ["WebApp", "WebGL"],
+    "link": "https://yukikurage.github.io/mandelbrot/"
+  },
+  {
+    "id": 4,
+    "title": "MANDELBROT",
+    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
+    "description": "マンデルブロ集合を描画",
+    "tags": ["WebApp", "WebGL"],
+    "link": "https://yukikurage.github.io/mandelbrot/"
+  },
+  {
+    "id": 5,
+    "title": "MANDELBROT",
+    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
+    "description": "マンデルブロ集合を描画",
+    "tags": ["WebApp", "WebGL"],
+    "link": "https://yukikurage.github.io/mandelbrot/"
+  },
+  {
+    "id": 6,
+    "title": "MANDELBROT",
+    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
+    "description": "マンデルブロ集合を描画",
+    "tags": ["WebApp", "WebGL"],
+    "link": "https://yukikurage.github.io/mandelbrot/"
+  },
+  {
+    "id": 7,
+    "title": "MANDELBROT",
+    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
+    "description": "マンデルブロ集合を描画",
+    "tags": ["WebApp", "WebGL"],
+    "link": "https://yukikurage.github.io/mandelbrot/"
+  },
+  {
+    "id": 8,
+    "title": "MANDELBROT",
+    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
+    "description": "マンデルブロ集合を描画",
+    "tags": ["WebApp", "WebGL"],
+    "link": "https://yukikurage.github.io/mandelbrot/"
   }
 ]

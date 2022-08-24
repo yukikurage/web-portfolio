@@ -17,10 +17,9 @@ notFoundPageComponent pathSig = el "div" do
 
   ch $ el "div" do
     useClass $ pure "flex flex-col p-20 gap-6 relative overflow-hidden"
+    useDelayClass 500 (pure "bg-[#000000]") (pure "bg-[#0000aa]")
     useClass $ pure
       "text-gray-300 rounded-md bg-gradient-radial bg-[#0000aa] shadow-inner"
-
-    usePopIn
 
     ch $ el "div" do
       useDelayClass 500 (pure "opacity-0") (pure "")
@@ -45,14 +44,13 @@ notFoundPageComponent pathSig = el "div" do
       ch $ el "div" do
         useClass $ pure "animate-glitch opacity-80"
         useClass $ pure
-          "w-24 mt-2 overflow-hidden transition-all duration-500 ease-linear"
+          "w-24 mt-2 overflow-hidden ease-linear"
 
         hSig /\ hAtom <- signal "h-0"
 
-        useTimeout 1300 $ writeAtom hAtom "h-10"
-        useTimeout 1800 $ writeAtom hAtom "h-14"
-        useTimeout 2300 $ writeAtom hAtom "h-20"
-        useTimeout 3000 $ writeAtom hAtom "h-24"
+        useTimeout 600 $ writeAtom hAtom "h-4"
+        useTimeout 1200 $ writeAtom hAtom "h-20"
+        useTimeout 1500 $ writeAtom hAtom "h-24"
 
         useClass hSig
 

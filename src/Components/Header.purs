@@ -41,7 +41,7 @@ headerComponent = el "div" do
 
     ch $ el "div" do
       useClass $ pure
-        "absolute top-0 left-0 h-full w-full rounded-md shadow-md transition-all transform-gpu -skew-x-[9deg] -z-10"
+        "absolute top-0 left-0 h-full w-full rounded shadow-md transition-all transform-gpu -skew-x-[9deg] -z-10"
       useColor Highlight Background
 
   ch $ el "div" do

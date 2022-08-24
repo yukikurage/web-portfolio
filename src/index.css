@@ -43,14 +43,15 @@
 }
 
 .markdown pre {
-  @apply bg-gray-400;
-  @apply bg-opacity-30;
+  @apply bg-gray-100;
+  @apply text-black;
   @apply py-3;
   @apply px-5;
   @apply rounded;
   @apply ml-9;
   @apply my-3;
 }
+
 .markdown code {
   @apply font-SourceCodePro !important;
 }

@@ -30,7 +30,7 @@ pageTitleComponent titleSig = el "div" do
 
     useDelayClass 10 (pure "") $ pure "-rotate-6"
 
-    useColor Reverse Background
+    useColor Primary Background
 
   ch $ el "div" do
     useClass $ pure "relative transition-opacity"
@@ -39,4 +39,4 @@ pageTitleComponent titleSig = el "div" do
 
     ch $ text $ titleSig
 
-    useColor Reverse Text
+    useColor Primary Text

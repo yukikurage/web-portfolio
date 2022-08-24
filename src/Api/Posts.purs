@@ -7,37 +7,47 @@ import Affjax.Web (get)
 import Data.Array (find)
 import Data.Either (Either(..))
 import Data.Maybe (Maybe(..))
-import Data.Post (PostId, PostInfo, PostItem)
+import Data.Post (PostId, PostInfo)
+import Data.Traversable (sequence, traverse)
 import Effect.Aff (Aff)
+import Simple.JSON (readJSON_)
 
 type PostInternal =
   { id :: PostId
   , title :: String
+  , tags :: Array String
+  , publishedAt :: String
   , contentURL :: String
   }
 
-workInternals :: Array PostInternal
-workInternals =
-  [ { contentURL: "posts/test.md"
-    , id: 1
-    , title: "Test"
-    }
-  ]
+fromPostInternal :: PostInternal -> Aff (Maybe PostInfo)
+fromPostInternal post = do
+  resEither <- get string post.contentURL
+  pure $ case resEither of
+    Left _ -> Nothing
+    Right res -> Just
+      { id: post.id
+      , title: post.title
+      , tags: post.tags
+      , publishedAt: post.publishedAt
+      , content: res.body
+      }
 
-getPosts :: Aff (Array PostItem)
-getPosts = pure $ map
-  (\{ id, title } -> { id, title })
-  workInternals
+getPosts :: Aff (Maybe (Array PostInfo))
+getPosts = do
+  resEither <- get string "./posts.json"
+  case resEither of
+    Left _ -> pure Nothing
+    Right res -> do
+      case readJSON_ res.body of
+        Nothing -> pure $ Nothing
+        Just postInternals -> do
+          posts <- traverse fromPostInternal postInternals
+          pure $ sequence posts
 
-getPostsInfo :: PostId -> Aff (Maybe PostInfo)
-getPostsInfo workId = do
-  let
-    workMaybe = find (\w -> w.id == workId) workInternals
-
-  case workMaybe of
-    Just { id, title, contentURL } -> do
-      resEither <- get string contentURL
-      case resEither of
-        Left _ -> pure $ Nothing
-        Right res -> pure $ Just { content: res.body, id, title }
-    Nothing -> pure $ Nothing
+getPostInfo :: PostId -> Aff (Maybe PostInfo)
+getPostInfo id = do
+  postsMaybe <- getPosts
+  pure $ case postsMaybe of
+    Nothing -> Nothing
+    Just posts -> find (\post -> post.id == id) posts

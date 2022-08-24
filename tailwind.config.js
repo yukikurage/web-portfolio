@@ -10,12 +10,12 @@ module.exports = {
         "stripe-y-2xl" : "repeating-linear-gradient(var(--tw-rotate),#ffffff00, #ffffff00 30px, #00000000 30px, #00000000 60px)",
       },
       fontFamily: {
-        Rubik: ["Rubik", "sans-serif"],
-        ZenKaku: ["Zen Kaku Gothic New", "sans-serif"],
+        Rubic: ["Rubik", "sans-serif"],
+        ZenMaru: ["Zen Maru Gothic", "sans-serif"],
         Bungee: ["Bungee", "cursive"],
         SourceCodePro: ["Source Code Pro", "monospace"],
         PassionOne: [ 'Passion One', 'cursive'],
-        default: ["Rubik", "Zen Kaku Gothic New", "sans-serif"],
+        default: ["Rubik", "Zen Maru Gothic", "sans-serif"],
       },
       animation: {
         "glitch-text": "glitch-text 3s linear infinite",
