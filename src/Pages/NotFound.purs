@@ -6,7 +6,6 @@ import Contexts (Contexts)
 import Data.Tuple.Nested ((/\))
 import Hooks.UseClass (useClass)
 import Hooks.UseDelayClass (useDelayClass)
-import Hooks.UsePopIn (usePopIn)
 import Jelly (Component, Signal, ch, el, signal, text, useTimeout, writeAtom, (:=))
 
 notFoundPageComponent :: Signal String -> Component Contexts

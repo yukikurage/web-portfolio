@@ -37,10 +37,8 @@ worksPageComponent = el "div" do
         chs $ mapFlipped works \work -> foreignLinkComponent (pure work.link)
           $ pure
           $ el "div" do
-              useColor Primary Background
-
               useClass $ pure
-                "relative w-full h-52 overflow-hidden rounded shadow-md group bg-opacity-70"
+                "relative w-full h-52 overflow-hidden rounded shadow-md group hover:opacity-80 transition-opacity"
 
               ch $ imageComponent do
                 "src" := pure work.thumbnailURL

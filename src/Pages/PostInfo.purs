@@ -41,7 +41,7 @@ postInfoPageComponent postIdSig = el "div" do
               useClass $ pure "relative rounded overflow-hidden pl-3"
               useColor Highlight Background
               ch $ el "div" do
-                useClass $ pure "text-4xl font-bold px-5 py-2 w-full"
+                useClass $ pure "text-3xl font-bold px-5 py-2 w-full"
 
                 useColor Primary Background
                 ch $ text $ pure $ post.title
