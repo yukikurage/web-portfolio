@@ -20,9 +20,9 @@ headerComponent = el "div" do
   pageSig /\ _ <- usePage
   useClass do
     page <- pageSig
-    pure if page == PageTop then "-top-20" else "top-0"
+    pure if page == PageTop then "-top-24" else "top-0"
 
-  useClass $ pure "relative w-full p-6 transition-all"
+  useClass $ pure "relative w-full py-4 px-8 transition-all"
 
   useClass $ pure "flex justify-start items-end gap-4"
 
@@ -37,12 +37,14 @@ headerComponent = el "div" do
     useClass $ pure "h-12 w-24"
     useClass $ pure "stroke-current"
 
-    ch $ logoComponent
-
     ch $ el "div" do
       useClass $ pure
-        "absolute top-0 left-0 h-full w-full rounded shadow-md transition-all transform-gpu -skew-x-[9deg] -z-10"
+        "absolute top-0 left-0 h-full w-full rounded shadow-md transition-all transform-gpu -skew-x-[9deg]"
       useColor Highlight Background
+
+    ch $ el "div" do
+      useClass $ pure "relative w-full h-full"
+      ch $ logoComponent
 
   ch $ el "div" do
     useClass $ pure "flex-grow"

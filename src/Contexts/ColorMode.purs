@@ -78,7 +78,7 @@ getColor = case _ of
       Background -> "bg-neutral-800"
     Disabled -> case _ of
       Text -> "text-neutral-600"
-      Background -> "bg-stone-200"
+      Background -> "bg-neutral-200"
     Transparent -> const ""
   Dark -> case _ of
     Primary -> case _ of
