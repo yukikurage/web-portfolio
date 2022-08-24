@@ -1,5 +1,3 @@
-import { marked } from 'marked';
+import { marked } from "marked";
 
-export const parseMarkdown = (element) => (markdown) => () => {
-  element.innerHTML = marked.parse(markdown);
-}
+export const parseMarkdown = (markdown) => marked.parse(markdown);

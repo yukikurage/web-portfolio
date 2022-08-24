@@ -2,6 +2,7 @@ module Pages.Top where
 
 import Prelude
 
+import Components.Logo (logoComponent)
 import Components.NavigationTab (navigationTabComponent)
 import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor)
@@ -16,15 +17,18 @@ topPageComponent = el "div" do
   useClass $ pure "flex flex-col justify-center items-start gap-10"
 
   ch $ el "div" do
-    useClass $ pure "h-24 w-96"
+    useClass $ pure "h-24 w-[30rem]"
     useClass $ pure
       "flex flex-col justify-center items-center relative overflow-hidden"
 
     ch $ el "div" do
       useColor Reverse Text
       useClass $ pure
-        "text-6xl font-black font-Bungee z-20 relative transition-opacity"
-      ch $ text $ pure "Yukinet"
+        "text-6xl font-black font-Bungee z-20 relative transition-opacity h-16 flex items-baseline gap-4"
+      ch $ logoComponent
+      ch $ el "div" do
+        useClass $ pure "h-full transform-gpu -skew-x-[9deg]"
+        ch $ text $ pure "YUKINET"
       useDelayClass 400 (pure "opacity-0") (pure "opacity-100")
 
     ch $ el "div" do
