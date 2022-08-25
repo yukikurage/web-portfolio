@@ -14,7 +14,8 @@ import Jelly (Component, ch, el, text)
 topPageComponent :: Component Contexts
 topPageComponent = el "div" do
   useClass $ pure "fixed top-0 left-[4rem] lg:left-[8rem] h-full"
-  useClass $ pure "flex flex-col justify-center items-start gap-10"
+  useClass $ pure
+    "flex flex-col justify-start sm:justify-center items-start gap-10 py-12"
 
   ch $ el "div" do
     useClass $ pure "h-16 w-[16rem] sm:h-24 sm:w-[26rem]"
@@ -54,15 +55,15 @@ topPageComponent = el "div" do
     ch $ navigationTabComponent
       { titleSig: pure "About"
       , refPageSig: pure PageAbout
-      , classSig: pure "text-4xl"
+      , classSig: pure " sm:text-4xl"
       }
     ch $ navigationTabComponent
       { titleSig: pure "Works"
       , refPageSig: pure PageWorks
-      , classSig: pure "text-4xl"
+      , classSig: pure "sm:text-4xl"
       }
     ch $ navigationTabComponent
       { titleSig: pure "Blog"
       , refPageSig: pure PagePosts
-      , classSig: pure "text-4xl"
+      , classSig: pure "sm:text-4xl"
       }
