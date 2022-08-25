@@ -63,7 +63,7 @@ backgroundComponent = el "div" do
 
   ch $ el "div" do
     useClass $ pure
-      "absolute -top-[1rem] sm:-top-1/4 -left-[3rem] w-[150%] h-[30rem] sm:w-[40rem] sm:h-[150%] lg:w-[50rem] transition-all shadow-md"
+      "absolute -top-[2rem] sm:-top-1/4 -left-[4rem] w-[150%] h-[30rem] sm:w-[40rem] sm:h-[150%] lg:w-[50rem] transition-all shadow-md"
     useClass do
       page <- pageSig
       pure $
