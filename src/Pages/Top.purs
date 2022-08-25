@@ -13,18 +13,18 @@ import Jelly (Component, ch, el, text)
 
 topPageComponent :: Component Contexts
 topPageComponent = el "div" do
-  useClass $ pure "fixed top-0 left-[10%] h-full"
+  useClass $ pure "fixed top-0 left-[4rem] lg:left-[8rem] h-full"
   useClass $ pure "flex flex-col justify-center items-start gap-10"
 
   ch $ el "div" do
-    useClass $ pure "h-24 w-[26rem]"
+    useClass $ pure "h-16 w-[16rem] sm:h-24 sm:w-[26rem]"
     useClass $ pure
       "flex flex-col justify-center items-center relative"
 
     ch $ el "div" do
       useColor Reverse Text
       useClass $ pure
-        "text-6xl font-black font-PassionOne z-20 relative transition-opacity h-16 flex items-baseline gap-6"
+        "text-4xl sm:text-6xl font-black font-PassionOne z-20 relative transition-opacity h-12 sm:h-16 flex items-baseline gap-6"
       ch $ logoComponent
       ch $ el "div" do
         useClass $ pure "h-full transform-gpu -skew-x-[9deg]"

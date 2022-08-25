@@ -24,7 +24,7 @@ useFooterTextColor = do
 
 footerComponent :: Component Contexts
 footerComponent = el "div" do
-  useClass $ pure "w-full h-32 py-8 px-12"
+  useClass $ pure "w-full h-[12rem] sm:h-[8rem] py-8 px-12"
 
   useFooterTextColor
 
@@ -37,7 +37,8 @@ footerComponent = el "div" do
     do pure Background
 
   useClass $ pure "text-opacity-80"
-  useClass $ pure "flex flex-row justify-between items-end"
+  useClass $ pure
+    "flex flex-col sm:flex-row justify-end sm:justify-between items-center sm:items-end gap-8"
 
   ch copyRight
   ch colorThemes

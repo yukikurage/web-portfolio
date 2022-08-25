@@ -49,7 +49,7 @@ root = el "div" do
     useClass $ pure "overflow-y-auto w-full flex-1"
 
     ch $ el "div" do
-      useClass $ pure "min-h-[calc(100%-8rem)]"
+      useClass $ pure "min-h-[calc(100%-12rem)] sm:min-h-[calc(100%-8rem)]"
 
       chSig do
         page <- pageSig

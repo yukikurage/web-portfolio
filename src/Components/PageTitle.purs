@@ -18,15 +18,15 @@ pageTitleComponent titleSig = el "div" do
 
   ch $ el "div" do
     useClass $ pure
-      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-16 transition-all rounded shadow-md"
+      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-14 transition-all rounded shadow-md"
 
-    useDelayClass 20 (pure "w-0") $ pure " w-80 rotate-3"
+    useDelayClass 20 (pure "w-0") $ pure " w-72 rotate-3"
 
     useColor Highlight Background
 
   ch $ el "div" do
     useClass $ pure
-      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-16 transition-all rounded shadow-md"
+      "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-16 transition-all rounded shadow-md"
 
     useDelayClass 10 (pure "") $ pure "-rotate-6"
 

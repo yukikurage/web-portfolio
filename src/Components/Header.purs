@@ -22,7 +22,7 @@ headerComponent = el "div" do
     page <- pageSig
     pure if page == PageTop then "-top-24" else "top-0"
 
-  useClass $ pure "relative w-full py-4 px-8 transition-all"
+  useClass $ pure "relative w-full py-4 px-4 transition-all"
 
   useClass $ pure "flex justify-start items-end gap-4"
 
@@ -34,7 +34,7 @@ headerComponent = el "div" do
     useClass $ pure "text-3xl font-black font-Bungee"
     useClass $ pure "relative py-2 rounded"
     useClass $ pure "flex justify-center items-center gap-2"
-    useClass $ pure "h-12 w-24"
+    useClass $ pure "h-10 w-20 sm:h-12 sm:w-24"
     useClass $ pure "stroke-current"
 
     ch $ el "div" do

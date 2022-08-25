@@ -23,7 +23,7 @@ worksPageComponent = el "div" do
   liftEffect $ launchAff_ $ fetchWorks unit
 
   useClass $ pure "w-full"
-  useClass $ pure "flex flex-col p-10 gap-20 items-center"
+  useClass $ pure "flex flex-col py-10 px-4 gap-12 items-center"
 
   ch $ pageTitleComponent $ pure "Works"
   chSig do
@@ -32,7 +32,7 @@ worksPageComponent = el "div" do
       Fetched works -> el "div" do
         useClass $ pure "w-full md:w-3/4"
         useClass $ pure
-          "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12"
+          "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-4"
         usePopIn
         chs $ mapFlipped works \work -> foreignLinkComponent (pure work.link)
           $ pure

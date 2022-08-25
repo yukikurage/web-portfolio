@@ -20,7 +20,7 @@ navigationTabComponent
 navigationTabComponent { titleSig, refPageSig, classSig } = el "a" do
   useClass $ pure "relative group py-2 px-3"
   useClass $ pure "flex justify-center"
-  useClass $ pure "text-2xl font-bold"
+  useClass $ pure "text-xl sm:text-2xl font-bold"
   useClass $ pure "transition-all"
   useClass $ classSig
 

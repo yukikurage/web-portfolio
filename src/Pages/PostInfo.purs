@@ -38,7 +38,7 @@ postInfoPageComponent postIdSig = el "div" do
         [ el "div" do
             usePopIn
 
-            useClass $ pure "w-3/4 flex flex-col gap-4 items-start"
+            useClass $ pure "w-full md:w-3/4 flex flex-col gap-4 items-start"
 
             ch $ el "div" do
               useClass $ pure "relative rounded overflow-hidden pl-3"

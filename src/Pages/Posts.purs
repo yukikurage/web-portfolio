@@ -28,7 +28,7 @@ postsPageComponent = el "div" do
   _ /\ pageAtom <- usePage
 
   useClass $ pure "w-full"
-  useClass $ pure "flex flex-col p-10 gap-20 items-center"
+  useClass $ pure "flex flex-col py-10 px-4 gap-12 items-center"
 
   ch $ pageTitleComponent $ pure "Blog"
 
@@ -59,7 +59,7 @@ postsPageComponent = el "div" do
             ch $ text $ pure $ dateText
 
           ch $ el "div" do
-            useClass $ pure "flex gap-2 items-baseline"
+            useClass $ pure "flex flex-col gap-2 items-baseline"
 
             ch $ el "div" do
               useClass $ pure "text-2xl font-bold pl-1"
