@@ -15,7 +15,7 @@ topPageComponent :: Component Contexts
 topPageComponent = el "div" do
   useClass $ pure "fixed top-0 sm:left-[4rem] lg:left-[8rem] h-full w-full"
   useClass $ pure
-    "flex flex-col justify-start sm:justify-center items-center sm:items-start gap-10 pt-24 sm:pt-0"
+    "flex flex-col justify-end sm:justify-center items-center sm:items-start gap-10 pb-[14rem] sm:pb-0"
 
   ch $ el "div" do
     useClass $ pure "h-16 w-[16rem] sm:h-24 sm:w-[26rem]"
