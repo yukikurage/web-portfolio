@@ -1,5 +1,7 @@
 ## できること
 
+詳細は [**Works**](#works) にて。
+
 ### Web アプリケーション一般
 
 特にフロントエンド
@@ -21,9 +23,11 @@
 
 ### その他創作活動
 
-- 作曲, 絵
-
-詳しくは [**Works**](#works) にて。
+- 作曲
+  - [SoundCloud](https://soundcloud.com/yukikurage)
+- 絵
+  - [Pixiv](https://www.pixiv.net/en/users/44737353)
+- アバター制作(Vroid)
 
 ## このサイトについて
 

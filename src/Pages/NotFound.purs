@@ -18,7 +18,7 @@ notFoundPageComponent pathSig = el "div" do
     useClass $ pure "flex flex-col p-20 gap-6 relative overflow-hidden"
     useDelayClass 500 (pure "bg-[#000000]") (pure "bg-[#0000aa]")
     useClass $ pure
-      "text-gray-300 rounded-md bg-gradient-radial bg-[#0000aa] shadow-inner"
+      "text-gray-300 rounded-md bg-gradient-radial shadow-inner"
 
     ch $ el "div" do
       useDelayClass 500 (pure "opacity-0") (pure "")
@@ -39,22 +39,7 @@ notFoundPageComponent pathSig = el "div" do
     ch $ el "div" do
       useDelayClass 500 (pure "opacity-0") (pure "")
       useClass $ pure
-        "flex font-mono flex-row gap-3 items-start scale-y-90 h-24"
-      ch $ el "div" do
-        useClass $ pure "animate-glitch opacity-80"
-        useClass $ pure
-          "w-24 mt-2 overflow-hidden ease-linear"
-
-        hSig /\ hAtom <- signal "h-0"
-
-        useTimeout 600 $ writeAtom hAtom "h-4"
-        useTimeout 1200 $ writeAtom hAtom "h-20"
-        useTimeout 1500 $ writeAtom hAtom "h-24"
-
-        useClass hSig
-
-        ch $ el "img" do
-          "src" := pure "./img/QR.png"
+        "flex font-mono flex-row gap-3 items-start scale-y-90 h-8"
       ch $ el "div" do
         useClass $ pure "animate-glitch-text"
         ch $ text $ pure "code: 404"
