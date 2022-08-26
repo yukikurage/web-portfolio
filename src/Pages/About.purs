@@ -14,6 +14,7 @@ import Effect.Aff (launchAff_)
 import Effect.Class (liftEffect)
 import Hooks.UseApi (FetchStatus(..), useApi)
 import Hooks.UseClass (useClass)
+import Hooks.UsePopIn (usePopIn)
 import Jelly (Component, ch, el, text, (:=))
 
 aboutPageComponent :: Component Contexts
@@ -27,6 +28,8 @@ aboutPageComponent = el "div" do
   -- ch $ pageTitleComponent $ pure "About"
 
   ch $ el "div" do
+    usePopIn
+
     useColor Primary Background
     useClass $ pure
       "w-full md:w-3/4 flex flex-col rounded overflow-hidden shadow-md"
