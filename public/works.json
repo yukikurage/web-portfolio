@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Jelly",
     "thumbnailURL": "./img/Jelly.png",
-    "description": "PureScriptのためのWebフレームワーク",
+    "contentURL": "./works/jelly.md",
     "tags": ["WebApp", "PureScript", "aaaaaaaa", "aaaaa"],
     "link": "https://github.com/yukikurage/purescript-jelly"
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "title": "YUKINET",
     "thumbnailURL": "./img/Yukinet_Screenshot.png",
-    "description": "ゆきくらげのWebページ",
+    "contentURL": "./works/yukinet.md",
     "tags": ["WebApp"],
     "link": "https://yukikurage.github.io/web-portfolio/#"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "title": "MANDELBROT",
     "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "description": "マンデルブロ集合を描画",
+    "contentURL": "./works/mandelbrot.md",
     "tags": ["WebApp", "WebGL"],
     "link": "https://yukikurage.github.io/mandelbrot/"
   },
@@ -27,7 +27,7 @@
     "id": 3,
     "title": "MANDELBROT",
     "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "description": "マンデルブロ集合を描画",
+    "contentURL": "./works/mandelbrot.md",
     "tags": ["WebApp", "WebGL"],
     "link": "https://yukikurage.github.io/mandelbrot/"
   },
@@ -35,7 +35,7 @@
     "id": 4,
     "title": "MANDELBROT",
     "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "description": "マンデルブロ集合を描画",
+    "contentURL": "./works/mandelbrot.md",
     "tags": ["WebApp", "WebGL"],
     "link": "https://yukikurage.github.io/mandelbrot/"
   },
@@ -43,7 +43,7 @@
     "id": 5,
     "title": "MANDELBROT",
     "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "description": "マンデルブロ集合を描画",
+    "contentURL": "./works/mandelbrot.md",
     "tags": ["WebApp", "WebGL"],
     "link": "https://yukikurage.github.io/mandelbrot/"
   },
@@ -51,7 +51,7 @@
     "id": 6,
     "title": "MANDELBROT",
     "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "description": "マンデルブロ集合を描画",
+    "contentURL": "./works/mandelbrot.md",
     "tags": ["WebApp", "WebGL"],
     "link": "https://yukikurage.github.io/mandelbrot/"
   },
@@ -59,7 +59,7 @@
     "id": 7,
     "title": "MANDELBROT",
     "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "description": "マンデルブロ集合を描画",
+    "contentURL": "./works/mandelbrot.md",
     "tags": ["WebApp", "WebGL"],
     "link": "https://yukikurage.github.io/mandelbrot/"
   },
@@ -67,7 +67,7 @@
     "id": 8,
     "title": "MANDELBROT",
     "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "description": "マンデルブロ集合を描画",
+    "contentURL": "./works/mandelbrot.md",
     "tags": ["WebApp", "WebGL"],
     "link": "https://yukikurage.github.io/mandelbrot/"
   }

@@ -6,7 +6,6 @@ type WorkInfo =
   { id :: WorkId
   , title :: String
   , thumbnailURL :: String
-  , description :: String
+  , content :: String
   , tags :: Array String
-  , link :: String
   }

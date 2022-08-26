@@ -8,18 +8,15 @@ import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor)
 import Contexts.Page (usePage)
 import Data.Functor (mapFlipped)
-import Data.Int (floor)
-import Data.JSDate (JSDate)
-import Data.JSDate as JSDate
 import Data.Page (Page(..))
 import Data.Tuple.Nested ((/\))
-import Effect (Effect)
 import Effect.Aff (launchAff_)
 import Effect.Class (liftEffect)
 import Hooks.UseApi (FetchStatus(..), useApi)
 import Hooks.UseClass (useClass)
 import Hooks.UsePopIn (usePopIn)
 import Jelly (Component, ch, chSig, chs, el, on, text, writeAtom)
+import Utils.GetDateText (getDateText)
 
 postsPageComponent :: Component Contexts
 postsPageComponent = el "div" do
@@ -79,10 +76,3 @@ postsPageComponent = el "div" do
             ch $ text $ pure post.content
 
       _ -> el "div" $ pure unit
-
-getDateText :: JSDate -> Effect String
-getDateText jsDate = do
-  year <- floor <$> JSDate.getFullYear jsDate
-  month <- floor <$> JSDate.getMonth jsDate
-  date <- floor <$> JSDate.getDate jsDate
-  pure $ show year <> "/" <> show (month + 1) <> "/" <> show date

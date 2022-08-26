@@ -56,6 +56,17 @@
   @apply font-SourceCodePro !important;
 }
 
+.markdown a {
+  @apply text-blue-500;
+  @apply hover:text-blue-700;
+}
+
+.markdown ul {
+  @apply list-disc;
+  @apply ml-12;
+  @apply my-2;
+}
+
 * {
   @apply transition-colors
 }

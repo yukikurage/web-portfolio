@@ -14,7 +14,7 @@ import Data.Tuple.Nested ((/\))
 import Effect (Effect)
 import Hooks.UseAdjustWindowHeight (useAdjustWindowHeight)
 import Hooks.UseClass (useClass)
-import Jelly (Component, ch, chSig, el, launchApp)
+import Jelly (Component, ch, chSig, el, launchApp, (:=))
 import Pages.About (aboutPageComponent)
 import Pages.NotFound (notFoundPageComponent)
 import Pages.PostInfo (postInfoPageComponent)
@@ -36,7 +36,7 @@ root = el "div" do
   useColor CM.Primary CM.Text
 
   useClass $ pure "font-default"
-  useClass $ pure "w-screen"
+  useClass $ pure "w-screen min-w-[24rem]"
   useClass $ pure "flex flex-col items-start"
 
   pageSig /\ _ <- usePage
@@ -57,7 +57,8 @@ root = el "div" do
         pure $ case page of
           PageAbout -> aboutPageComponent
           PageWorks -> worksPageComponent
-          PageWorkInfo workId -> workInfoPageComponent $ pure workId
+          PageWorkInfo workId -> notFoundPageComponent $ pure $ "works" <> show
+            workId
           PagePosts -> postsPageComponent
           PagePostInfo postId -> postInfoPageComponent $ pure postId
           PageNotFound path -> notFoundPageComponent $ pure path
@@ -65,3 +66,6 @@ root = el "div" do
           PageTop -> topPageComponent
 
     ch footerComponent
+
+    ch $ el "div" do
+      "id" := pure "dialog-container-root"

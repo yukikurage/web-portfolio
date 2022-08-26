@@ -13,7 +13,8 @@ import Jelly (Component, ch, el, text)
 
 topPageComponent :: Component Contexts
 topPageComponent = el "div" do
-  useClass $ pure "fixed top-0 sm:left-[4rem] lg:left-[8rem] h-full w-full"
+  useClass $ pure
+    "fixed top-0 sm:left-[4rem] lg:left-[8rem] h-full w-full pointer-events-none"
   useClass $ pure
     "flex flex-col justify-end sm:justify-center items-center sm:items-start gap-10 pb-[14rem] sm:pb-0"
 
@@ -49,7 +50,7 @@ topPageComponent = el "div" do
 
   ch $ el "div" do
     useClass $ pure
-      "flex sm:flex-col gap-3 items-center sm:items-start relative "
+      "flex sm:flex-col gap-3 items-center sm:items-start relative pointer-events-auto"
     useClass $ pure "transition-all"
     useDelayClass 100 (pure "opacity-0") (pure "opacity-100")
 

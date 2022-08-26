@@ -28,6 +28,7 @@ to generate this file without the comments in this block.
   , "prelude"
   , "random"
   , "routing"
+  , "safely"
   , "simple-json"
   , "strings"
   , "tuples"
