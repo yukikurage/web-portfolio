@@ -10,12 +10,13 @@ import Effect (Effect)
 import Effect.Class (liftEffect)
 import Hooks.UseClass (useClass)
 import Hooks.UseDelayClass (useDelayClass)
+import Hooks.UsePopIn (usePopIn)
 import Jelly (Component, Hook, Signal, ch, chSig, el, on, useContext, useUnmountEffect, (:=))
 import Jelly.Data.Component (runComponent)
 import Web.DOM.Element (closest, fromEventTarget, toNode)
 import Web.DOM.Node (appendChild, removeChild)
 import Web.DOM.ParentNode (QuerySelector(..), querySelector)
-import Web.Event.Event (preventDefault, target)
+import Web.Event.Event (target)
 import Web.HTML (window)
 import Web.HTML.HTMLDocument (toParentNode)
 import Web.HTML.Window (document)
@@ -29,10 +30,11 @@ useDialog onClose componentSig = do
 
   node /\ unmount <- liftEffect $ flip runComponent context $ el "div" do
 
-    useClass $ pure "fixed inset-0 p-12 bg-opacity-30 overflow-auto"
+    useClass $ pure
+      "fixed inset-0 p-6 bg-opacity-30 overflow-auto transition-opacity"
     useClass $ pure "flex flex-col items-center justify-center"
 
-    useDelayClass 100 (pure "opacity-0") $ pure "opacity-100"
+    useDelayClass 50 (pure "opacity-0") $ pure "opacity-100"
 
     useColor Reverse Background
 
@@ -47,7 +49,9 @@ useDialog onClose componentSig = do
     ch $ el "div" do
       "id" := pure "dialog-container-outer"
 
-      useClass $ pure "relative w-fit h-fit"
+      useClass $ pure "w-fit h-fit"
+
+      usePopIn
 
       chSig componentSig
 

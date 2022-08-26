@@ -71,7 +71,7 @@ postInfoPageComponent postIdSig = el "div" do
               ch $ text $ pure $ "#" <> tag
 
         ch $ el "div" do
-          useClass $ pure "w-full px-12 py-4 rounded shadow-md"
+          useClass $ pure "w-full p-6 rounded shadow-md"
 
           useColor Primary Background
           ch $ markdownComponent $ pure $ post.content

@@ -81,7 +81,7 @@ worksPageComponent = el "div" do
                       $ el "div" do
                           useClass $ pure "rounded-md"
                           useClass $ pure
-                            "flex flex-col md:flex-row md:gap-4 h-[35rem] overflow-hidden shadow-md"
+                            "flex flex-col md:flex-row h-[35rem] overflow-hidden shadow-md"
                           useColor Primary Background
 
                           ch $ el "div" do
@@ -96,12 +96,20 @@ worksPageComponent = el "div" do
 
                           ch $ el "div" do
                             useClass $ pure
-                              "flex flex-col gap-2 p-8 flex-1 h-full overflow-y-auto"
+                              "flex flex-col gap-2 p-6 flex-1 h-full overflow-y-auto"
 
                             ch $ el "div" do
                               useClass $ pure "font-bold text-3xl"
 
                               ch $ text $ pure work.title
+
+                            ch $ el "div" do
+                              useClass $ pure
+                                "flex flex-row gap-2 opacity-90 flex-wrap"
+                              chs $ mapFlipped work.tags \tag -> el "p" do
+                                useClass $ pure "text-sm"
+
+                                ch $ text $ pure $ "#" <> tag
 
                             ch $ markdownComponent $ pure $ work.content
                 else el "div" $ pure unit

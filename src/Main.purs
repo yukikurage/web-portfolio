@@ -36,7 +36,7 @@ root = el "div" do
   useColor CM.Primary CM.Text
 
   useClass $ pure "font-default"
-  useClass $ pure "w-screen min-w-[24rem]"
+  useClass $ pure "w-screen min-w-[22rem]"
   useClass $ pure "flex flex-col items-start"
 
   pageSig /\ _ <- usePage
