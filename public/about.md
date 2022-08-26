@@ -9,7 +9,7 @@
 - バックエンド
   - Go, NodeJS, etc...
 
-### 関数型言語 S
+### 関数型言語
 
 - PureScript, Haskell, Agda
 
@@ -27,9 +27,9 @@
 
 ## このサイトについて
 
-このサイトは、ゆきくらげのポートフォリオサイト、兼ブログサイトです。
+このサイトはゆきくらげのポートフォリオサイト兼ブログサイトです。
 
-PureScript, TailwindCSS, GithubPages などを用いて作った SPA です。
+PureScript、 TailwindCSS、 GithubPages などを用いて作った SPA です。
 
 また、**Jelly** というフレームワークを自作して使っています。
 
