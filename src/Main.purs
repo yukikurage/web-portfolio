@@ -21,7 +21,6 @@ import Pages.PostInfo (postInfoPageComponent)
 import Pages.Posts (postsPageComponent)
 import Pages.Top (topPageComponent)
 import Pages.Works (worksPageComponent)
-import Pages.WorksInfo (workInfoPageComponent)
 
 main :: Effect Unit
 main = do
