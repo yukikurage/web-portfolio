@@ -95,4 +95,4 @@ aboutPageComponent = el "div" do
         ch $ logoComponent
       ch $ el "div" do
         useClass $ pure "-skew-x-[9deg]"
-        ch $ text $ pure "Yukikurage"
+        ch $ text $ pure "YUKIKURAGE"
