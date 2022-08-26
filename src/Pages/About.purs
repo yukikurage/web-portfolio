@@ -5,6 +5,7 @@ import Prelude
 import Api.About (getAbout)
 import Components.ForeignLink (foreignLinkComponent)
 import Components.Image (imageComponent)
+import Components.Logo (logoComponent)
 import Components.Markdown (markdownComponent)
 import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor)
@@ -82,3 +83,13 @@ aboutPageComponent = el "div" do
         case aboutStatus of
           Fetched str -> pure str
           _ -> pure ""
+
+    ch $ el "div" do
+      useClass $ pure
+        "w-full gap-2 p-8 flex flex-col items-center font-PassionOne text-3xl"
+      ch $ el "div" do
+        useClass $ pure "h-16"
+        ch $ logoComponent
+      ch $ el "div" do
+        useClass $ pure "-skew-x-[9deg]"
+        ch $ text $ pure "Yukikurage"
