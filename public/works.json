@@ -51,16 +51,6 @@
     ]
   },
   {
-    "id": 6,
-    "title": "U-Show",
-    "thumbnailURL": "./img/u-show.png",
-    "contentURL": "./works/u-show.md",
-    "tags": [
-      "WebApp",
-      "Next.js"
-    ]
-  },
-  {
     "id": 7,
     "title": "YUKIWORKS",
     "thumbnailURL": "./img/YUKIWORKS.png",
