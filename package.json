@@ -8,7 +8,7 @@
     "watch:esbuild": "node ./scripts/watch.mjs",
     "watch:tailwind": "npx tailwindcss -i ./src/index.css -o ./public/index.css --watch",
     "watch": "run-p watch:*",
-    "build:spago": "npx spago build && npx tailwindcss -i ./src/index.css -o ./public/index.css",
+    "build:spago": "npx spago build",
     "build:esbuild": "node ./scripts/build.mjs",
     "build:tailwind": "npx tailwindcss -i ./src/index.css -o ./public/index.css",
     "build": "run-s build:*"

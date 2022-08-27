@@ -3,10 +3,9 @@ module Pages.NotFound where
 import Prelude
 
 import Contexts (Contexts)
-import Data.Tuple.Nested ((/\))
 import Hooks.UseClass (useClass)
 import Hooks.UseDelayClass (useDelayClass)
-import Jelly (Component, Signal, ch, el, signal, text, useTimeout, writeAtom, (:=))
+import Jelly (Component, Signal, ch, el, text)
 
 notFoundPageComponent :: Signal String -> Component Contexts
 notFoundPageComponent pathSig = el "div" do

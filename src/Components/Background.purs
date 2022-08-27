@@ -51,6 +51,8 @@ backgroundComponent = el "div" do
   pageSig /\ _ <- usePage
 
   ch $ imageComponent do
+    "loading" := pure "lazy"
+
     useMouseMove 100
     i <- liftEffect $ randomInt 0 $ length bgImgList - 1
     useClass $ pure
