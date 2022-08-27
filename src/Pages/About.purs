@@ -43,7 +43,7 @@ aboutPageComponent = el "div" do
       useClass $ pure "flex flex-col gap-2 p-8"
 
       ch $ el "div" do
-        useClass $ pure "flex justify-start gap-4 items-baseline"
+        useClass $ pure "flex justify-start gap-2 items-baseline"
 
         ch $ el "div" do
           useClass $ pure "flex font-bold text-3xl"
@@ -56,7 +56,7 @@ aboutPageComponent = el "div" do
           ch $ text $ pure "@yukikurage"
 
       ch $ el "div" do
-        useClass $ pure "flex justify-start gap-6 py-2"
+        useClass $ pure "flex justify-start items-center gap-1 py-1 -ml-1"
 
         ch $ foreignLinkComponent
           do pure "https://twitter.com/yukikurage_2019"
@@ -64,21 +64,21 @@ aboutPageComponent = el "div" do
             pure $
               el "i" do
                 useClass $ pure
-                  "fab fa-twitter fa-2x hover:opacity-80 transition-opacity"
+                  "icon-twitter hover:opacity-70 transition-opacity text-3xl text-[#1DA1F2]"
         ch $ foreignLinkComponent
           do pure "https://github.com/yukikurage"
           do
             pure $
               el "i" do
                 useClass $ pure
-                  "fab fa-github fa-2x hover:opacity-80 transition-opacity"
+                  "icon-github-circled hover:opacity-70 transition-opacity text-3xl text-[#171515]"
         ch $ foreignLinkComponent
           do pure "https://soundcloud.com/yukikurage"
           do
             pure $
               el "i" do
                 useClass $ pure
-                  "fab fa-soundcloud fa-2x hover:opacity-80 transition-opacity"
+                  "icon-soundcloud hover:opacity-70 transition-opacity text-3xl text-[#fe6d35]"
 
       ch $ markdownComponent do
         aboutStatus <- aboutStatusSig
