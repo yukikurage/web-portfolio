@@ -4,10 +4,11 @@ import Prelude
 
 import Affjax.ResponseFormat (string)
 import Affjax.Web (get)
+import Control.Parallel (parTraverse)
 import Data.Array (find)
 import Data.Either (Either(..))
 import Data.Maybe (Maybe(..))
-import Data.Traversable (sequence, traverse)
+import Data.Traversable (sequence)
 import Data.Work (WorkId, WorkInfo)
 import Effect.Aff (Aff)
 import Simple.JSON (readJSON_)
@@ -43,7 +44,7 @@ getWorks = do
       case readJSON_ res.body of
         Nothing -> pure $ Nothing
         Just workInternals -> do
-          works <- traverse fromWorkInternal workInternals
+          works <- parTraverse fromWorkInternal workInternals
           pure $ sequence works
 
 getWorkInfo :: WorkId -> Aff (Maybe WorkInfo)

@@ -4,12 +4,13 @@ import Prelude
 
 import Affjax.ResponseFormat (string)
 import Affjax.Web (get)
+import Control.Parallel (parTraverse)
 import Data.Array (find)
 import Data.Either (Either(..))
 import Data.JSDate (parse)
 import Data.Maybe (Maybe(..))
 import Data.Post (PostId, PostInfo)
-import Data.Traversable (sequence, traverse)
+import Data.Traversable (sequence)
 import Effect.Aff (Aff)
 import Effect.Class (liftEffect)
 import Simple.JSON (readJSON_)
@@ -46,7 +47,7 @@ getPosts = do
       case readJSON_ res.body of
         Nothing -> pure $ Nothing
         Just postInternals -> do
-          posts <- traverse fromPostInternal postInternals
+          posts <- parTraverse fromPostInternal postInternals
           pure $ sequence posts
 
 getPostInfo :: PostId -> Aff (Maybe PostInfo)
