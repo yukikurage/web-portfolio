@@ -32,7 +32,6 @@ worksPageComponent = el "div" do
     pure case worksStatus of
       Fetched works -> el "div" do
         useClass $ pure "w-full md:w-3/4"
-        usePopIn
 
         ch $ el "div" do
           useClass $ pure

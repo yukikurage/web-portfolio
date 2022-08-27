@@ -15,7 +15,7 @@ imageComponent hooks = el "div" do
     isLoaded <- isLoadedSig
     pure $ if isLoaded then "opacity-100" else "opacity-0"
 
-  useClass $ pure "transition-opacity duration-500 w-full h-full"
+  useClass $ pure "w-full h-full"
 
   ch $ el "img" do
     on "load" \_ -> writeAtom isLoadedAtom true
