@@ -58,7 +58,7 @@ copyRight = el "div" do
           useFooterTextColor
           useClass $ pure
             "text-opacity-80 hover:text-opacity-60 transition-colors font-bold"
-          useClass $ pure "fa-brands fa-brands fa-github fa-2x"
+          useClass $ pure "fab fab fa-github fa-2x"
     ch $ text $ pure "made by "
     ch $ foreignLinkComponent
       do

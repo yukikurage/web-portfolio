@@ -64,21 +64,21 @@ aboutPageComponent = el "div" do
             pure $
               el "i" do
                 useClass $ pure
-                  "fa-brands fa-twitter fa-2x hover:opacity-80 transition-opacity"
+                  "fab fa-twitter fa-2x hover:opacity-80 transition-opacity"
         ch $ foreignLinkComponent
           do pure "https://github.com/yukikurage"
           do
             pure $
               el "i" do
                 useClass $ pure
-                  "fa-brands fa-github fa-2x hover:opacity-80 transition-opacity"
+                  "fab fa-github fa-2x hover:opacity-80 transition-opacity"
         ch $ foreignLinkComponent
           do pure "https://soundcloud.com/yukikurage"
           do
             pure $
               el "i" do
                 useClass $ pure
-                  "fa-brands fa-soundcloud fa-2x hover:opacity-80 transition-opacity"
+                  "fab fa-soundcloud fa-2x hover:opacity-80 transition-opacity"
 
       ch $ markdownComponent do
         aboutStatus <- aboutStatusSig
