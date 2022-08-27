@@ -48,8 +48,6 @@ useDialog onClose componentSig = do
 
       useClass $ pure "w-fit h-fit"
 
-      usePopIn
-
       chSig componentSig
 
   maybeDialogRoot <- liftEffect $
