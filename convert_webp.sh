@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PARAMS=('-m 6 -q 70 -mt -af -progress')
+PARAMS=('-m 6 -q 70 -mt -af -progress -resize 800 0')
 
 if [ $# -ne 0 ]; then
 	PARAMS=$@;
