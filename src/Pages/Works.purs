@@ -15,7 +15,6 @@ import Effect.Class (liftEffect)
 import Hooks.UseApi (FetchStatus(..), useApi)
 import Hooks.UseClass (useClass)
 import Hooks.UseDialog (useDialog)
-import Hooks.UsePopIn (usePopIn)
 import Jelly (Component, ch, chSig, chs, el, on, signal, text, writeAtom, (:=))
 
 worksPageComponent :: Component Contexts

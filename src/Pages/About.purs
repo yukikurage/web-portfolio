@@ -40,7 +40,7 @@ aboutPageComponent = el "div" do
 
     ch $ el "div" do
       useClass $ pure "w-full"
-      useClass $ pure "flex flex-col gap-2 p-6"
+      useClass $ pure "flex flex-col gap-2 p-8"
 
       ch $ el "div" do
         useClass $ pure "flex justify-start gap-4 items-baseline"
