@@ -23,11 +23,14 @@
 
 ### その他創作活動
 
+こちらの詳細は同人創作活動系のポートフォリオ [YUKIWORKS](https://yukikurage.github.io/portfolio/) を参照してください。
+
 - 作曲
   - [SoundCloud](https://soundcloud.com/yukikurage)
 - 絵
   - [Pixiv](https://www.pixiv.net/en/users/44737353)
 - アバター制作(Vroid)
+  - [ゆきくらげ](https://hub.vroid.com/characters/1378540640045694507/models/6942276656664864420)
 
 ## このサイトについて
 

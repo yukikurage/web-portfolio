@@ -4,71 +4,111 @@
     "title": "Jelly",
     "thumbnailURL": "./img/Jelly.png",
     "contentURL": "./works/jelly.md",
-    "tags": ["WebApp", "PureScript", "aaaaaaaa", "aaaaa"],
-    "link": "https://github.com/yukikurage/purescript-jelly"
+    "tags": [
+      "WebApp",
+      "PureScript"
+    ]
   },
   {
     "id": 2,
     "title": "YUKINET",
     "thumbnailURL": "./img/Yukinet_Screenshot.png",
     "contentURL": "./works/yukinet.md",
-    "tags": ["WebApp"],
-    "link": "https://yukikurage.github.io/web-portfolio/#"
+    "tags": [
+      "WebApp",
+      "PureScript"
+    ]
   },
   {
     "id": 3,
     "title": "MANDELBROT",
     "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
     "contentURL": "./works/mandelbrot.md",
-    "tags": ["WebApp", "WebGL"],
-    "link": "https://yukikurage.github.io/mandelbrot/"
-  },
-  {
-    "id": 3,
-    "title": "MANDELBROT",
-    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "contentURL": "./works/mandelbrot.md",
-    "tags": ["WebApp", "WebGL"],
-    "link": "https://yukikurage.github.io/mandelbrot/"
+    "tags": [
+      "WebApp",
+      "WebGL"
+    ]
   },
   {
     "id": 4,
-    "title": "MANDELBROT",
-    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "contentURL": "./works/mandelbrot.md",
-    "tags": ["WebApp", "WebGL"],
-    "link": "https://yukikurage.github.io/mandelbrot/"
+    "title": "Yuki Brainf**k",
+    "thumbnailURL": "./img/yukibrainf__k.png",
+    "contentURL": "./works/yukibrainf__k.md",
+    "tags": [
+      "WebApp",
+      "PureScript",
+      "Brainfuck"
+    ]
   },
   {
     "id": 5,
-    "title": "MANDELBROT",
-    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "contentURL": "./works/mandelbrot.md",
-    "tags": ["WebApp", "WebGL"],
-    "link": "https://yukikurage.github.io/mandelbrot/"
+    "title": "YukiLogic",
+    "thumbnailURL": "./img/yukilogic.png",
+    "contentURL": "./works/yukilogic.md",
+    "tags": [
+      "WebApp",
+      "PureScript"
+    ]
   },
   {
     "id": 6,
-    "title": "MANDELBROT",
-    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "contentURL": "./works/mandelbrot.md",
-    "tags": ["WebApp", "WebGL"],
-    "link": "https://yukikurage.github.io/mandelbrot/"
+    "title": "U-Show",
+    "thumbnailURL": "./img/u-show.png",
+    "contentURL": "./works/u-show.md",
+    "tags": [
+      "WebApp",
+      "Next.js"
+    ]
   },
   {
     "id": 7,
-    "title": "MANDELBROT",
-    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "contentURL": "./works/mandelbrot.md",
-    "tags": ["WebApp", "WebGL"],
-    "link": "https://yukikurage.github.io/mandelbrot/"
+    "title": "YUKIWORKS",
+    "thumbnailURL": "./img/YUKIWORKS.png",
+    "contentURL": "./works/yukiworks.md",
+    "tags": [
+      "WebApp",
+      "PureScript"
+    ]
   },
   {
     "id": 8,
-    "title": "MANDELBROT",
-    "thumbnailURL": "./img/MANDELBROT_Screenshot.png",
-    "contentURL": "./works/mandelbrot.md",
-    "tags": ["WebApp", "WebGL"],
-    "link": "https://yukikurage.github.io/mandelbrot/"
+    "title": "Glapple",
+    "thumbnailURL": "./img/glapple.png",
+    "contentURL": "./works/glapple.md",
+    "tags": [
+      "WebApp",
+      "PureScript",
+      "Graphics"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Phosphor(WIP)",
+    "thumbnailURL": "./img/Phosphor.png",
+    "contentURL": "./works/phosphor.md",
+    "tags": [
+      "Haskell",
+      "Language"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Y Language",
+    "thumbnailURL": "./img/y-lang.png",
+    "contentURL": "./works/y-lang.md",
+    "tags": [
+      "Haskell"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "PureScript Dependency Graph",
+    "thumbnailURL": "./img/Dependency.png",
+    "contentURL": "./works/dependency.md",
+    "tags": [
+      "VSCode",
+      "PureScript",
+      "JavaScript"
+    ]
   }
 ]

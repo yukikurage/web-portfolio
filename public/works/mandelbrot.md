@@ -1,4 +1,4 @@
-MANDELBROT は WebGL を利用してマンデルブロ集合を書くサイトです。
+[MANDELBROT](https://yukikurage.github.io/mandelbrot/) は WebGL を利用してマンデルブロ集合を書くサイトです。
 
 速度重視のため、精度は拡大するとだいぶ悪くなってしまいます。
 
@@ -6,6 +6,7 @@ MANDELBROT は WebGL を利用してマンデルブロ集合を書くサイト�
 
 ## 各種リンク
 
-[MANDELBROT (サイト)](https://yukikurage.github.io/mandelbrot/)
-
-[mandelbrot (GitHub リポジトリ)](https://github.com/yukikurage/mandelbrot)
+- サイト:
+  [MANDELBROT](https://yukikurage.github.io/mandelbrot/)
+- リポジトリ:
+  [mandelbrot](https://github.com/yukikurage/mandelbrot)

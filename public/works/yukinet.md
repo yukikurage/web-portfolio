@@ -1,6 +1,6 @@
-YUKINET はゆきくらげのポートフォリオ、兼ブログサイトです。
+[YUKINET](https://yukikurage.github.io/web-portfolio/#) はゆきくらげのポートフォリオ、兼ブログサイトです。
 
-使用言語は PureScript、フレームワーク、デザインから自作をした SPA (シングルページアプリケーション)です。
+使用言語は PureScript で、フレームワーク、デザインから自作をした SPA (シングルページアプリケーション)です。
 
 作成したフレームワークは [Jelly](https://github.com/yukikurage/purescript-jelly) として独立しています。
 
@@ -10,6 +10,9 @@ YUKINET はゆきくらげのポートフォリオ、兼ブログサイトです
 
 ## 各種リンク
 
-[YUKINET (サイト)](https://yukikurage.github.io/web-portfolio/#)
-
-[web-portfolio (GitHub リポジトリ)](https://github.com/yukikurage/web-portfolio)
+- 詳細ブログ:
+  [YUKINET を公開しました](#posts/1)
+- サイト:
+  [YUKINET](https://yukikurage.github.io/web-portfolio/#)
+- リポジトリ:
+  [web-portfolio](https://github.com/yukikurage/web-portfolio)
