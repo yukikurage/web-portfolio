@@ -8,7 +8,7 @@ import Jelly (Hook)
 
 usePopIn :: forall r. Hook r Unit
 usePopIn = do
-  useClass $ pure "transition-all relative"
+  useClass $ pure "transition-opacity"
   useDelayClass 10
-    do pure "opacity-0 -top-1"
-    do pure "opacity-100 top-0"
+    do pure "opacity-0"
+    do pure "opacity-100"
