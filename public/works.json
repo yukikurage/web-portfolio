@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Jelly",
-    "thumbnailURL": "./img/webp/Jelly.webp",
+    "thumbnailURL": "./img/600/webp/Jelly.webp",
     "contentURL": "./works/jelly.md",
     "tags": [
       "WebApp",
@@ -12,7 +12,7 @@
   {
     "id": 2,
     "title": "YUKINET",
-    "thumbnailURL": "./img/webp/Yukinet_Screenshot.webp",
+    "thumbnailURL": "./img/600/webp/Yukinet_Screenshot.webp",
     "contentURL": "./works/yukinet.md",
     "tags": [
       "WebApp",
@@ -22,7 +22,7 @@
   {
     "id": 3,
     "title": "MANDELBROT",
-    "thumbnailURL": "./img/webp/MANDELBROT_Screenshot.webp",
+    "thumbnailURL": "./img/600/webp/MANDELBROT_Screenshot.webp",
     "contentURL": "./works/mandelbrot.md",
     "tags": [
       "WebApp",
@@ -32,7 +32,7 @@
   {
     "id": 4,
     "title": "Yuki Brainf**k",
-    "thumbnailURL": "./img/webp/yukibrainf__k.webp",
+    "thumbnailURL": "./img/600/webp/yukibrainf__k.webp",
     "contentURL": "./works/yukibrainf__k.md",
     "tags": [
       "WebApp",
@@ -43,7 +43,7 @@
   {
     "id": 5,
     "title": "YukiLogic",
-    "thumbnailURL": "./img/webp/yukilogic.webp",
+    "thumbnailURL": "./img/600/webp/yukilogic.webp",
     "contentURL": "./works/yukilogic.md",
     "tags": [
       "WebApp",
@@ -53,7 +53,7 @@
   {
     "id": 7,
     "title": "YUKIWORKS",
-    "thumbnailURL": "./img/webp/YUKIWORKS.webp",
+    "thumbnailURL": "./img/600/webp/YUKIWORKS.webp",
     "contentURL": "./works/yukiworks.md",
     "tags": [
       "WebApp",
@@ -63,7 +63,7 @@
   {
     "id": 8,
     "title": "Glapple",
-    "thumbnailURL": "./img/webp/glapple.webp",
+    "thumbnailURL": "./img/600/webp/glapple.webp",
     "contentURL": "./works/glapple.md",
     "tags": [
       "WebApp",
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "title": "Phosphor(WIP)",
-    "thumbnailURL": "./img/webp/Phosphor.webp",
+    "thumbnailURL": "./img/600/webp/Phosphor.webp",
     "contentURL": "./works/phosphor.md",
     "tags": [
       "Haskell",
@@ -84,7 +84,7 @@
   {
     "id": 10,
     "title": "Y Language",
-    "thumbnailURL": "./img/webp/y-lang.webp",
+    "thumbnailURL": "./img/600/webp/y-lang.webp",
     "contentURL": "./works/y-lang.md",
     "tags": [
       "Haskell"
@@ -93,7 +93,7 @@
   {
     "id": 11,
     "title": "PureScript Dependency Graph",
-    "thumbnailURL": "./img/webp/Dependency.webp",
+    "thumbnailURL": "./img/600/webp/Dependency.webp",
     "contentURL": "./works/dependency.md",
     "tags": [
       "VSCode",

@@ -18,14 +18,14 @@ import Jelly (Component, Hook, ch, el, (:=))
 
 bgImgList :: Array String
 bgImgList =
-  [ "img/webp/hina.webp"
-  , "img/webp/IrisOut.webp"
-  , "img/webp/yukikurage2.webp"
-  , "img/webp/comi.webp"
-  , "img/webp/20200107.webp"
-  , "img/webp/20210504.webp"
-  , "img/webp/Dot.webp"
-  , "img/webp/thumbnail8.webp"
+  [ "./img/800/webp/hina.webp"
+  , "./img/800/webp/IrisOut.webp"
+  , "./img/800/webp/yukikurage2.webp"
+  , "./img/800/webp/comi.webp"
+  , "./img/800/webp/20200107.webp"
+  , "./img/800/webp/20210504.webp"
+  , "./img/800/webp/Dot.webp"
+  , "./img/800/webp/thumbnail8.webp"
   ]
 
 useMouseMove :: Int -> Hook Contexts Unit
@@ -57,7 +57,7 @@ backgroundComponent = el "div" do
     i <- liftEffect $ randomInt 0 $ length bgImgList - 1
     useClass $ pure
       "absolute top-1/2 left-1/2 w-full h-full object-cover transition-all duration-500 ease-linear"
-    "src" := pure (fromMaybe "/img/webp/hina.webp" $ bgImgList !! i)
+    "src" := pure (fromMaybe "./img/800/webp/hina.webp" $ bgImgList !! i)
     useClass do
       page <- pageSig
       pure $
