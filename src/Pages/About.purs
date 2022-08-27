@@ -35,7 +35,7 @@ aboutPageComponent = el "div" do
       "w-full md:w-3/4 flex flex-col rounded overflow-hidden shadow-md"
 
     ch $ imageComponent do
-      "src" := pure "./img/Header.png"
+      "src" := pure "./img/webp/Header.webp"
       useClass $ pure "w-full h-40 md:h-60 xl:h-80 object-cover"
 
     ch $ el "div" do
