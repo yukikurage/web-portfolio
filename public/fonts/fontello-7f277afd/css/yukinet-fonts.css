@@ -1,4 +1,5 @@
 @font-face {
+  font-display:swap;
   font-family: 'yukinet-fonts';
   src: url('../font/yukinet-fonts.eot?24524696');
   src: url('../font/yukinet-fonts.eot?24524696#iefix') format('embedded-opentype'),
