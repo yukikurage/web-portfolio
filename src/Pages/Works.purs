@@ -112,4 +112,4 @@ worksPageComponent = el "div" do
                             ch $ markdownComponent $ pure $ work.content
                 else el "div" $ pure unit
 
-      _ -> el "div" $ pure unit
+      _ -> el "div" $ useClass $ pure "h-[1000px]"
