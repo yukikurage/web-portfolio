@@ -12,7 +12,6 @@ module.exports = {
       fontFamily: {
         Rubic: ["Rubik", "sans-serif"],
         ZenMaru: ["Zen Maru Gothic", "sans-serif"],
-        Bungee: ["Bungee", "cursive"],
         SourceCodePro: ["Source Code Pro", "monospace"],
         PassionOne: [ 'Passion One', 'cursive'],
         default: ["Rubik", "Zen Maru Gothic", "sans-serif"],

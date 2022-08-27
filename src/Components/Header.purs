@@ -31,7 +31,6 @@ headerComponent = el "div" do
 
     useLink $ pure PageTop
 
-    useClass $ pure "text-3xl font-black font-Bungee"
     useClass $ pure "relative py-2 rounded"
     useClass $ pure "flex justify-center items-center gap-2"
     useClass $ pure "h-10 w-20 sm:h-12 sm:w-24"
