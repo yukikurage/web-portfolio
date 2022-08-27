@@ -20,7 +20,7 @@ pageTitleComponent titleSig = el "div" do
     useClass $ pure
       "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-14 transition-all rounded shadow-md"
 
-    useDelayClass 20 (pure "w-0") $ pure " w-72 rotate-3"
+    useDelayClass 10 (pure "w-0") $ pure " w-72 rotate-3"
 
     useColor Highlight Background
 
@@ -35,7 +35,7 @@ pageTitleComponent titleSig = el "div" do
   ch $ el "div" do
     useClass $ pure "relative transition-opacity"
 
-    useDelayClass 100 (pure "opacity-0") $ pure "opacity-100"
+    useDelayClass 10 (pure "opacity-0") $ pure "opacity-100"
 
     ch $ text $ titleSig
 

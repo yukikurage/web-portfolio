@@ -3,7 +3,6 @@ module Hooks.UseDialog where
 import Prelude
 
 import Contexts (Contexts)
-import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor)
 import Data.Maybe (Maybe(..))
 import Data.Tuple.Nested ((/\))
 import Effect (Effect)
@@ -34,7 +33,7 @@ useDialog onClose componentSig = do
       "fixed inset-0 p-6 bg-opacity-40 overflow-auto transition-opacity bg-black"
     useClass $ pure "flex flex-col items-center justify-center"
 
-    useDelayClass 50 (pure "opacity-0") $ pure "opacity-100"
+    useDelayClass 10 (pure "opacity-0") $ pure "opacity-100"
 
     on "click" \e -> case fromEventTarget =<< target e of
       Just elem -> do
