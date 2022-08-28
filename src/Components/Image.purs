@@ -5,7 +5,7 @@ import Prelude
 import Contexts (Contexts)
 import Data.Tuple.Nested ((/\))
 import Hooks.UseClass (useClass)
-import Jelly (Component, Hook, ch, el, on, signal, writeAtom, (:=))
+import Jelly (Component, Hook, ch, el, on, signal, writeAtom)
 
 imageComponent :: Hook Contexts Unit -> Component Contexts
 imageComponent hooks = el "div" do
