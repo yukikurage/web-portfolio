@@ -58,6 +58,7 @@ backgroundComponent = el "div" do
     useClass $ pure
       "absolute top-1/2 left-1/2 w-full h-full object-cover transition-all duration-500 ease-linear"
     "src" := pure (fromMaybe "./img/800/webp/hina.webp" $ bgImgList !! i)
+    "alt" := pure "background"
     useClass do
       page <- pageSig
       pure $

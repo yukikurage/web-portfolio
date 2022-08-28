@@ -84,13 +84,14 @@ colorThemeToggleButton
   :: Signal ColorMode
   -> Component Contexts
 colorThemeToggleButton colorModeSig =
-  el "button" do
+  el "div" do
     currentColorModeSig /\ colorThemeAtom <- useColorMode
 
     let
       isCurrentColorThemeSig = eq <$> currentColorModeSig <*> colorModeSig
 
-    useClass $ pure "hover:opacity-60 transition-opacity font-bold rounded-sm"
+    useClass $ pure
+      "hover:opacity-60 transition-opacity font-bold rounded-sm cursor-pointer"
     useClass $ do
       isCurrentColorTheme <- isCurrentColorThemeSig
       pure $ if isCurrentColorTheme then "opacity-60" else "opacity-100"

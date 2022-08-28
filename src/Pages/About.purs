@@ -36,6 +36,7 @@ aboutPageComponent = el "div" do
 
     ch $ imageComponent do
       "src" := pure "./img/1000/webp/Header.webp"
+      "alt" := pure "Header"
       useClass $ pure "w-full h-40 md:h-60 xl:h-80 object-cover"
 
     ch $ el "div" do
