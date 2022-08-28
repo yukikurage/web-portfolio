@@ -2,12 +2,13 @@ module Pages.PostInfo where
 
 import Prelude
 
-import Api.Posts (getPostInfo)
 import Components.Markdown (markdownComponent)
+import Contentful (getPostInfo)
 import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor)
 import Contexts.Page (usePage)
 import Data.Functor (mapFlipped)
+import Data.JSDate (parse)
 import Data.Page (Page(..))
 import Data.Post (PostId)
 import Data.Tuple.Nested ((/\))
@@ -52,7 +53,7 @@ postInfoPageComponent postIdSig = el "div" do
             ch $ el "div" do
               useClass $ pure "text-sm"
 
-              dateText <- liftEffect $ getDateText post.publishedAt
+              dateText <- liftEffect $ getDateText =<< parse post.createdAt
 
               ch $ text $ pure $ dateText
 

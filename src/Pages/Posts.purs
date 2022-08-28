@@ -2,12 +2,14 @@ module Pages.Posts where
 
 import Prelude
 
-import Api.Posts (getPosts)
 import Components.PageTitle (pageTitleComponent)
+import Contentful (getPosts)
 import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor)
 import Contexts.Page (usePage)
 import Data.Functor (mapFlipped)
+import Data.JSDate (parse)
+import Data.Maybe (Maybe(..))
 import Data.Page (Page(..))
 import Data.Tuple.Nested ((/\))
 import Effect.Aff (launchAff_)
@@ -20,7 +22,7 @@ import Utils.GetDateText (getDateText)
 
 postsPageComponent :: Component Contexts
 postsPageComponent = el "div" do
-  postsStatusSig /\ fetchWorks <- useApi $ \_ -> getPosts
+  postsStatusSig /\ fetchWorks <- useApi $ \_ -> Just <$> getPosts
   liftEffect $ launchAff_ $ fetchWorks unit
   _ /\ pageAtom <- usePage
 
@@ -51,7 +53,7 @@ postsPageComponent = el "div" do
           ch $ el "div" do
             useClass $ pure "text-sm"
 
-            dateText <- liftEffect $ getDateText post.publishedAt
+            dateText <- liftEffect $ getDateText =<< parse post.createdAt
 
             ch $ text $ pure $ dateText
 

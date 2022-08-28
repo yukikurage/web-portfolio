@@ -2,13 +2,14 @@ module Pages.Works where
 
 import Prelude
 
-import Api.Works (getWorks)
 import Components.Image (imageComponent)
 import Components.Markdown (markdownComponent)
 import Components.PageTitle (pageTitleComponent)
+import Contentful (getWorks)
 import Contexts (Contexts)
 import Contexts.ColorMode (ColorScheme(..), ColorTarget(..), useColor)
 import Data.Functor (mapFlipped)
+import Data.Maybe (Maybe(..))
 import Data.Tuple.Nested ((/\))
 import Effect.Aff (launchAff_)
 import Effect.Class (liftEffect)
@@ -16,10 +17,11 @@ import Hooks.UseApi (FetchStatus(..), useApi)
 import Hooks.UseClass (useClass)
 import Hooks.UseDialog (useDialog)
 import Jelly (Component, ch, chSig, chs, el, on, signal, text, writeAtom, (:=))
+import Utils.GetContentFulImageLink (getContentfulImageLink)
 
 worksPageComponent :: Component Contexts
 worksPageComponent = el "div" do
-  worksStatusSig /\ fetchWorks <- useApi $ \_ -> getWorks
+  worksStatusSig /\ fetchWorks <- useApi $ \_ -> Just <$> getWorks
   liftEffect $ launchAff_ $ fetchWorks unit
 
   useClass $ pure "w-full"
@@ -36,6 +38,8 @@ worksPageComponent = el "div" do
           useClass $ pure
             "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-4"
           chs $ mapFlipped works \work -> el "div" do
+            useColor Primary Background
+
             isOpenDialogSig /\ isOpenDialogAtom <- signal false
 
             on "click" \_ -> do
@@ -45,7 +49,7 @@ worksPageComponent = el "div" do
               "relative w-full h-52 overflow-hidden rounded shadow-md group hover:opacity-80 transition-opacity cursor-pointer"
 
             ch $ imageComponent do
-              "src" := pure work.thumbnailURL
+              "src" := pure (getContentfulImageLink work.thumbnail <> "&w=500")
               "alt" := pure work.title
               useClass $ pure
                 "absolute top-0 left-0 w-full h-full object-cover transition-all group-hover:blur-sm group-hover:scale-105"
@@ -79,22 +83,25 @@ worksPageComponent = el "div" do
                       $ el "div" do
                           useClass $ pure "rounded-md"
                           useClass $ pure
-                            "flex flex-col md:flex-row h-[35rem] overflow-hidden shadow-md"
+                            "w-full flex flex-col md:flex-row h-[35rem] overflow-hidden shadow-md"
                           useColor Primary Background
 
                           ch $ el "div" do
                             useClass $ pure
-                              "w-full h-24 md:w-1/3 md:h-full"
+                              "w-full h-24 md:w-60 md:h-full"
 
                             ch $ imageComponent do
-                              "src" := pure work.thumbnailURL
+                              "src" := pure
+                                ( getContentfulImageLink work.thumbnail <>
+                                    "&h=560"
+                                )
                               "alt" := pure work.title
                               useClass $ pure
                                 "w-full h-full object-cover"
 
                           ch $ el "div" do
                             useClass $ pure
-                              "flex flex-col gap-2 p-6 flex-1 h-full overflow-y-auto"
+                              "flex flex-col gap-2 p-6 h-full overflow-y-auto"
 
                             ch $ el "div" do
                               useClass $ pure "font-bold text-3xl"

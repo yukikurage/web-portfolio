@@ -8,16 +8,6 @@ fi
 
 cd $(pwd)/public/img/
 
-cd $(pwd)/600
-
-shopt -s nullglob nocaseglob extglob
-
-for FILE in *.@(jpg|jpeg|tif|tiff|png); do
-    cwebp $PARAMS "$FILE" -o "./webp/${FILE%.*}".webp -resize 600 0;
-done
-
-cd ..
-
 cd $(pwd)/800
 
 shopt -s nullglob nocaseglob extglob

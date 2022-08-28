@@ -1,13 +1,11 @@
 module Data.Post where
 
-import Data.JSDate (JSDate)
-
-type PostId = Int
+type PostId = String
 
 type PostInfo =
   { id :: PostId
   , title :: String
   , tags :: Array String
-  , publishedAt :: JSDate
+  , createdAt :: String
   , content :: String
   }

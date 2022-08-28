@@ -7,7 +7,7 @@ import Data.Foldable (oneOf)
 import Data.Post (PostId)
 import Data.Work (WorkId)
 import Routing (match)
-import Routing.Match (Match, end, int, lit)
+import Routing.Match (Match, end, lit, str)
 
 data Page
   = PageTop
@@ -27,9 +27,9 @@ pageToHash = case _ of
   PageTop -> ""
   PageAbout -> "about"
   PageWorks -> "works"
-  PageWorkInfo workId -> "works/" <> show workId
+  PageWorkInfo workId -> "works/" <> workId
   PagePosts -> "posts"
-  PagePostInfo postId -> "posts/" <> show postId
+  PagePostInfo postId -> "posts/" <> postId
   PageLinks -> "links"
   PageNotFound path -> path
 
@@ -37,9 +37,9 @@ route :: Match Page
 route =
   oneOf
     [ PageAbout <$ lit "about"
-    , PageWorkInfo <$> (lit "works" *> int)
+    , PageWorkInfo <$> (lit "works" *> str)
     , PageWorks <$ lit "works"
-    , PagePostInfo <$> (lit "posts" *> int)
+    , PagePostInfo <$> (lit "posts" *> str)
     , PagePosts <$ lit "posts"
     , PageLinks <$ lit "links"
     , pure $ PageTop

@@ -1,11 +1,11 @@
 module Data.Work where
 
-type WorkId = Int
+type WorkId = String
 
 type WorkInfo =
   { id :: WorkId
   , title :: String
-  , thumbnailURL :: String
+  , thumbnail :: String
   , content :: String
   , tags :: Array String
   }
