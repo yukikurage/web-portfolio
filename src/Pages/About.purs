@@ -71,7 +71,7 @@ aboutPageComponent = el "div" do
             pure $
               el "i" do
                 useClass $ pure
-                  "icon-github-circled hover:opacity-70 transition-opacity text-3xl text-[#171515]"
+                  "icon-github-circled hover:opacity-70 transition-opacity text-3xl"
         ch $ foreignLinkComponent
           do pure "https://soundcloud.com/yukikurage"
           do
