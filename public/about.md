@@ -42,4 +42,4 @@ PureScript、 TailwindCSS、 GithubPages などを用いて作った SPA です�
 
 そのほかにも、Markdown を使った本文の記述、GitHub Actions によるデプロイ、レスポンシブデザインへの対応などを行っています。
 
-詳しくはブログ記事 [**YUKINET を公開しました**](#posts/1) にて。
+詳しくはブログ記事 [**YUKINET を公開しました**](#posts/52vNDHbiMUr6upA4OeY31I) にて。
