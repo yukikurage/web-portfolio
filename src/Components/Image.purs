@@ -18,7 +18,5 @@ imageComponent hooks = el "div" do
   useClass $ pure "transition-opacity w-full h-full"
 
   ch $ el "img" do
-    "loading" := pure "lazy"
-
     on "load" \_ -> writeAtom isLoadedAtom true
     hooks
