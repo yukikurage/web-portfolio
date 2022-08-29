@@ -78,7 +78,7 @@ getColor = case _ of
       Background -> "bg-neutral-800"
     Disabled -> case _ of
       Text -> "text-neutral-600"
-      Background -> "bg-neutral-200"
+      Background -> "bg-neutral-100"
     Transparent -> const ""
   Dark -> case _ of
     Primary -> case _ of
@@ -92,7 +92,7 @@ getColor = case _ of
       Background -> "bg-white"
     Disabled -> case _ of
       Text -> "text-zinc-300"
-      Background -> "bg-zinc-700"
+      Background -> "bg-zinc-800"
     Transparent -> const ""
   Summer -> case _ of
     Primary -> case _ of
@@ -106,7 +106,7 @@ getColor = case _ of
       Background -> "bg-slate-700"
     Disabled -> case _ of
       Text -> "text-slate-500"
-      Background -> "bg-slate-200"
+      Background -> "bg-slate-100"
     Transparent -> const ""
   Winter -> case _ of
     Primary -> case _ of
@@ -120,7 +120,7 @@ getColor = case _ of
       Background -> "bg-stone-100"
     Disabled -> case _ of
       Text -> "text-stone-300"
-      Background -> "bg-stone-700"
+      Background -> "bg-stone-800"
     Transparent -> const ""
   Hacker -> case _ of
     Primary -> case _ of
@@ -134,7 +134,7 @@ getColor = case _ of
       Background -> "bg-white"
     Disabled -> case _ of
       Text -> "text-neutral-300"
-      Background -> "bg-neutral-700"
+      Background -> "bg-neutral-800"
     Transparent -> const ""
 
 useColorSig

@@ -32,7 +32,7 @@ aboutPageComponent = el "div" do
 
     useColor Primary Background
     useClass $ pure
-      "w-full md:w-3/4 flex flex-col rounded overflow-hidden shadow-md"
+      "w-full md:w-3/4 flex flex-col rounded overflow-hidden shadow"
 
     ch $ imageComponent do
       "src" := pure "./img/1000/webp/Header.webp"

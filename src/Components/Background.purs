@@ -62,11 +62,11 @@ backgroundComponent = el "div" do
     useClass do
       page <- pageSig
       pure $
-        if page == PageTop then "opacity-50 blur-sm" else "opacity-40 blur"
+        if page == PageTop then "opacity-80 blur-sm" else "opacity-40 blur"
 
   ch $ el "div" do
     useClass $ pure
-      "absolute -bottom-[2rem] sm:-top-1/4 -left-[4rem] w-[150%] h-[30rem] sm:w-[40rem] sm:h-[150%] lg:w-[50rem] transition-all shadow-md"
+      "absolute -bottom-[2rem] sm:-top-1/4 -left-[4rem] w-[150%] h-[30rem] sm:w-[40rem] sm:h-[150%] lg:w-[50rem] transition-all shadow"
     useClass do
       page <- pageSig
       pure $

@@ -46,7 +46,7 @@ worksPageComponent = el "div" do
               writeAtom isOpenDialogAtom $ true
 
             useClass $ pure
-              "relative w-full h-52 overflow-hidden rounded shadow-md group hover:opacity-80 transition-opacity cursor-pointer"
+              "relative w-full h-52 overflow-hidden rounded shadow group hover:opacity-80 transition-opacity cursor-pointer"
 
             ch $ imageComponent do
               "src" := pure (getContentfulImageLink work.thumbnail <> "&w=500")
@@ -83,7 +83,7 @@ worksPageComponent = el "div" do
                       $ el "div" do
                           useClass $ pure "rounded-md"
                           useClass $ pure
-                            "w-full flex flex-col md:flex-row h-[35rem] overflow-hidden shadow-md"
+                            "w-full flex flex-col md:flex-row h-[35rem] overflow-hidden shadow"
                           useColor Primary Background
 
                           ch $ el "div" do

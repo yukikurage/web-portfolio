@@ -45,7 +45,7 @@ postsPageComponent = el "div" do
           on "click" \_ -> writeAtom pageAtom $ PagePostInfo post.id
 
           useClass $ pure
-            "relative w-full overflow-hidden rounded shadow-md group p-4 cursor-pointer hover:opacity-80 transition-opacity"
+            "relative w-full overflow-hidden rounded shadow group p-4 cursor-pointer hover:opacity-80 transition-opacity"
 
           useClass $ pure
             "flex flex-col gap-2 items-start"
