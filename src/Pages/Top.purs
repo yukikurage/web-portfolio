@@ -26,7 +26,7 @@ topPageComponent = el "div" do
     ch $ el "div" do
       useColor Reverse Text
       useClass $ pure
-        "text-4xl sm:text-5xl font-black font-Bungee z-20 relative transition-opacity h-12 sm:h-16 flex items-baseline gap-6"
+        "text-4xl sm:text-6xl font-black font-PassionOne z-20 relative transition-opacity h-12 sm:h-16 flex items-baseline gap-6"
       ch $ logoComponent
       ch $ el "div" do
         useClass $ pure "h-full transform-gpu -skew-x-[9deg]"
