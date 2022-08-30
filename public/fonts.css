@@ -5,8 +5,8 @@
   font-style: normal;
   font-weight: 400;
   src: local(''),
-       url('./fonts/zen-maru-gothic-v9-japanese/zen-maru-gothic-v9-japanese-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/zen-maru-gothic-v9-japanese/zen-maru-gothic-v9-japanese-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('./fonts/zen-maru-gothic-subset/zen-maru-gothic-subset-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/zen-maru-gothic-subset/zen-maru-gothic-subset-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* zen-maru-gothic-500 - japanese */
@@ -16,8 +16,8 @@
   font-style: normal;
   font-weight: 500;
   src: local(''),
-       url('./fonts/zen-maru-gothic-v9-japanese/zen-maru-gothic-v9-japanese-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/zen-maru-gothic-v9-japanese/zen-maru-gothic-v9-japanese-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('./fonts/zen-maru-gothic-subset/zen-maru-gothic-subset-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/zen-maru-gothic-subset/zen-maru-gothic-subset-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* zen-maru-gothic-700 - japanese */
@@ -27,8 +27,8 @@
   font-style: normal;
   font-weight: 700;
   src: local(''),
-       url('./fonts/zen-maru-gothic-v9-japanese/zen-maru-gothic-v9-japanese-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/zen-maru-gothic-v9-japanese/zen-maru-gothic-v9-japanese-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('./fonts/zen-maru-gothic-subset/zen-maru-gothic-subset-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/zen-maru-gothic-subset/zen-maru-gothic-subset-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* zen-maru-gothic-900 - japanese */
@@ -38,8 +38,8 @@
   font-style: normal;
   font-weight: 900;
   src: local(''),
-       url('./fonts/zen-maru-gothic-v9-japanese/zen-maru-gothic-v9-japanese-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/zen-maru-gothic-v9-japanese/zen-maru-gothic-v9-japanese-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('./fonts/zen-maru-gothic-subset/zen-maru-gothic-subset-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/zen-maru-gothic-subset/zen-maru-gothic-subset-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* passion-one-900 - latin */
