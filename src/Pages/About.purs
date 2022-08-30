@@ -90,7 +90,7 @@ aboutPageComponent = el "div" do
 
     ch $ el "div" do
       useClass $ pure
-        "w-full gap-2 p-8 flex flex-col items-center font-PassionOne text-3xl"
+        "w-full gap-2 p-8 flex flex-col items-center font-Bungee text-2xl"
       ch $ el "div" do
         useClass $ pure "h-16"
         ch $ logoComponent

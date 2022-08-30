@@ -14,6 +14,7 @@ module.exports = {
         ZenMaru: ["Zen Maru Gothic", "sans-serif"],
         SourceCodePro: ["Source Code Pro", "monospace"],
         PassionOne: [ 'Passion One', 'cursive'],
+        Bungee: [ 'Bungee', 'cursive'],
         default: ["Rubik", "Zen Maru Gothic", "sans-serif"],
       },
       animation: {
