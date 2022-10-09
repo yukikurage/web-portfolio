@@ -17,7 +17,7 @@ notFoundPageComponent pathSig = el "div" do
     useClass $ pure "flex flex-col p-20 gap-6 relative overflow-hidden"
     useDelayClass 500 (pure "bg-[#000000]") (pure "bg-[#0000aa]")
     useClass $ pure
-      "text-gray-300 rounded-md bg-gradient-radial shadow-inner"
+      "text-gray-300 rounded bg-gradient-radial shadow-inner"
 
     ch $ el "div" do
       useDelayClass 500 (pure "opacity-0") (pure "")

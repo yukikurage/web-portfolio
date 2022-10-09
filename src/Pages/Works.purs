@@ -81,7 +81,7 @@ worksPageComponent = el "div" do
                   el "div" do
                     useDialog (writeAtom isOpenDialogAtom false) $ pure
                       $ el "div" do
-                          useClass $ pure "rounded-md"
+                          useClass $ pure "rounded"
                           useClass $ pure
                             "w-full flex flex-col md:flex-row h-[35rem] overflow-hidden shadow"
                           useColor Primary Background

@@ -36,7 +36,7 @@ topPageComponent = el "div" do
     ch $ el "div" do
       useDelayClass 200 (pure "w-0") (pure "w-full")
       useClass $ pure
-        "absolute top-0 left-0 h-full rounded-md transition-all transform-gpu -skew-x-[9deg]"
+        "absolute top-0 left-0 h-full rounded transition-all transform-gpu -skew-x-[9deg]"
       useColor Highlight Background
       useDelayClass 400 (pure "duration-500") (pure "")
 
