@@ -72,7 +72,7 @@ postInfoPageComponent postIdSig = el "div" do
               ch $ text $ pure $ "#" <> tag
 
         ch $ el "div" do
-          useClass $ pure "w-full p-6 rounded shadow"
+          useClass $ pure "w-full pt-5 pb-12 px-10 rounded shadow"
 
           useColor Primary Background
           ch $ markdownComponent $ pure $ post.content
