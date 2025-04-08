@@ -22,7 +22,6 @@ bgImgList =
   , "./img/800/webp/IrisOut.webp"
   , "./img/800/webp/yukikurage2.webp"
   , "./img/800/webp/comi.webp"
-  , "./img/800/webp/20200107.webp"
   , "./img/800/webp/20210504.webp"
   , "./img/800/webp/Dot.webp"
   , "./img/800/webp/thumbnail8.webp"
